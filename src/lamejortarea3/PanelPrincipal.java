@@ -10,7 +10,8 @@ public class PanelPrincipal extends JPanel{
         exp = new Expendedor (10, 1000);
         con = new Comprador ();
         panelp = new JPanel();
-        this.setBackground(Color.white);
+        this.setBackground(Color.blue);
+        this.setBounds(300, 300, 300, 300);
         /*this.setLayout(new BorderLayout());
         this.setSize(800,600);
         this.setVisible(true);*/
