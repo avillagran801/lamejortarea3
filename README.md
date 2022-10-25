@@ -1,1 +1,4 @@
-# lamejortarea3
+# LaMejorTarea3
+ 
+- José Francisco Cortés Pizarro
+- Ana Sofía Villagrán Pardo
