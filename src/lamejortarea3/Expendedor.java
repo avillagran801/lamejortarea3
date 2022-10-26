@@ -10,19 +10,6 @@ public class Expendedor extends JPanel{
     private Deposito fanta;
     private ArrayList<Moneda> vuelto;
     
-    @Override
-    public void paint(Graphics g){
-        super.paint(g);
-        // Máquina
-        g.setColor(Color.lightGray);
-        g.fillRect(600, 200, 250, 400);
-        
-        // Vidrio
-        g.setColor(Color.CYAN);
-        g.fillRect(620, 220, 180, 300);
-        
-    }
-    
     public Expendedor(int cant, int precio_aux){
         precio = precio_aux;
         coca = new Deposito();
@@ -39,6 +26,26 @@ public class Expendedor extends JPanel{
            sprite.addBebida(aux_sprite);
            fanta.addBebida(aux_fanta);
         }
+    }
+    
+    @Override
+    public void paint(Graphics g){
+        super.paint(g);
+        // Máquina
+        g.setColor(Color.lightGray);
+        g.fillRect(550, 150, 300, 450);
+        
+        // Vidrio
+        g.setColor(Color.CYAN);
+        g.fillRect(570, 170, 200, 330);
+        
+        // Depositos
+        g.setColor(Color.BLACK);
+        g.fillRect(570, 260, 200, 10);
+        g.fillRect(570, 360, 200, 10);
+        g.fillRect(570, 460, 200, 10);
+        //coca.paint(g);
+
     }
     
     public Bebida comprarBebida(int idBebida, Moneda m){

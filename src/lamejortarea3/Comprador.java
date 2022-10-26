@@ -17,9 +17,14 @@ class Comprador extends JPanel{
         g.fillOval(200, 200, 100, 100);
         
         // Cuerpo
-        g.fillRect(240, 300, 20, 300);
+        g.fillRect(240, 300, 20, 200);
         g.fillRect(180, 350, 140, 20);
-        
+        int[] x_aux = {180, 200, 260, 240};
+        int[] y_aux = {600, 600, 500, 500};
+        g.fillPolygon(x_aux, y_aux, 4);
+        int[] k_aux = {320, 300, 240, 260};
+        int[] j_aux = {600, 600, 500, 500};
+        g.fillPolygon(k_aux, j_aux, 4);
     }
     
     public void ComprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){
