@@ -20,7 +20,7 @@ public class PanelPrincipal extends JPanel{
     @Override
     public void paint (Graphics g){
         super.paint(g);
-        //con.paint(g);
-        //exp.paint(g);
+        con.paint(g);
+        exp.paint(g);
     }
 }

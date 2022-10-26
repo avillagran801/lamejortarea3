@@ -1,12 +1,27 @@
 package lamejortarea3;
 import java.util.ArrayList;
+import java.awt.*;
+import javax.swing.*;
 
-public class Expendedor {
+public class Expendedor extends JPanel{
     private int precio;
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
     private ArrayList<Moneda> vuelto;
+    
+    @Override
+    public void paint(Graphics g){
+        super.paint(g);
+        // Máquina
+        g.setColor(Color.lightGray);
+        g.fillRect(600, 200, 250, 400);
+        
+        // Vidrio
+        g.setColor(Color.CYAN);
+        g.fillRect(620, 220, 180, 300);
+        
+    }
     
     public Expendedor(int cant, int precio_aux){
         precio = precio_aux;
