@@ -6,6 +6,7 @@ public class PanelPrincipal extends JPanel{
     private JPanel panelp;
     private Comprador con;
     private Expendedor exp;
+    
     public PanelPrincipal(){
         exp = new Expendedor (10, 1000);
         con = new Comprador ();

@@ -44,8 +44,9 @@ public class Expendedor extends JPanel{
         g.fillRect(570, 260, 200, 10);
         g.fillRect(570, 360, 200, 10);
         g.fillRect(570, 460, 200, 10);
-        //coca.paint(g);
-
+        coca.paint(g);
+        sprite.paint(g);
+        fanta.paint(g);
     }
     
     public Bebida comprarBebida(int idBebida, Moneda m){
@@ -59,21 +60,21 @@ public class Expendedor extends JPanel{
                 switch (idBebida){
                     // 0 siendo coca; 1 siendo sprite; 2 siendo fanta.
                     case 0:
-                        if(coca.getSize() == 0){
+                        if(coca.isEmpty()){
                             throw new NoHayBebidaException("No queda Coca-cola.");
                         }
                         Expendedor.this.crearVuelto(m);
                         return coca.getBebida();
 
                     case 1:
-                        if(sprite.getSize() == 0){
+                        if(sprite.isEmpty()){
                             throw new NoHayBebidaException("No queda Sprite.");
                         }
                         Expendedor.this.crearVuelto(m);
                         return sprite.getBebida();
 
                     case 2:
-                        if(fanta.getSize() == 0){
+                        if(fanta.isEmpty()){
                             throw new NoHayBebidaException("No queda Fanta.");
                         }
                         Expendedor.this.crearVuelto(m);

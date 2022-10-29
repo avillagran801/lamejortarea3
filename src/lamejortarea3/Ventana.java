@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
     PanelPrincipal pp;
-    JLabel tag;
+    //JLabel tag;
     public Ventana(){
         super();
         this.setLayout(new BorderLayout());
