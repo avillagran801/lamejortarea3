@@ -42,7 +42,10 @@ public class Expendedor extends JPanel{
         super.paint(g);
         // Máquina
         g.setColor(Color.lightGray);
-        g.fillRect(550, 150, 300, 450);
+        g.fillRect(550, 150, 350, 450);
+        g.setColor(Color.BLACK);
+        g.fillRect(570, 600, 30, 15);
+        g.fillRect(850, 600, 30,15);
         
         // Vidrio
         g.setColor(Color.CYAN);
@@ -57,6 +60,12 @@ public class Expendedor extends JPanel{
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
+        
+        // Deposito bebida comprada
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(800, 470, 70, 100);
+        
+        
     }
     
     public Bebida comprarBebida(int idBebida, Moneda m){
@@ -147,4 +156,5 @@ public class Expendedor extends JPanel{
     public int getPrecio(){
         return precio;
     }
+    
 }

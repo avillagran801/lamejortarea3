@@ -22,4 +22,5 @@ public class PanelPrincipal extends JPanel{
         con.paint(g);
         exp.paint(g);
     }
+    
 }
