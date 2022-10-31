@@ -9,7 +9,7 @@ public class Expendedor extends JPanel{
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
-    private Bebida compra;
+    private DepositoCompra compra;
     private ArrayList<Moneda> vuelto;
     private ArrayList<Moneda> monedas;
     
@@ -18,6 +18,7 @@ public class Expendedor extends JPanel{
         coca = new Deposito();
         sprite = new Deposito();
         fanta = new Deposito();
+        compra = new DepositoCompra();
         vuelto = new ArrayList<Moneda>();
         monedas = new ArrayList<Moneda>();
         cantidad = cant;
@@ -58,8 +59,7 @@ public class Expendedor extends JPanel{
         fanta.paintComponent(g);
         
         // Deposito bebida comprada
-        g.setColor(Color.DARK_GRAY);
-        g.fillRect(800, 470, 70, 100);
+        compra.paintComponent(g);
                 
         // Deposito monedas
         g.setColor(Color.DARK_GRAY);
@@ -83,7 +83,7 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        compra = coca.getBebida();
+                        compra.agregarBebida(coca.getBebida());
                         break;
 
                     case 1:
@@ -92,7 +92,7 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        compra = sprite.getBebida();
+                        compra.agregarBebida(sprite.getBebida());
                         break;
 
                     case 2:
@@ -101,7 +101,7 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        compra = fanta.getBebida();
+                        compra.agregarBebida(fanta.getBebida());
                         break;
                     
                     default:
@@ -179,5 +179,14 @@ public class Expendedor extends JPanel{
     
     public int getPrecio(){
         return precio;
+    }
+    
+    public Boolean depositoCompra(){
+        if(compra != null){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
