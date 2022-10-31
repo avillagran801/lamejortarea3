@@ -32,8 +32,8 @@ class Comprador extends JPanel{
         
         Bebida aux_bebida = expendedor.comprarBebida(idBebida, moneda);
         if (aux_bebida != null){
-            sabor = aux_bebida.beber();
-            System.out.println(sabor);
+            // sabor = aux_bebida.beber();
+            // System.out.println(sabor);
         }
         
         Boolean vuelto_fin = false;
