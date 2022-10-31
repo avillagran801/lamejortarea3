@@ -176,18 +176,24 @@ public class Expendedor extends JPanel{
                 Bebida aux_coca = new CocaCola();
                 coca.addBebida(aux_coca);
             }
+        } else {
+            System.out.println("Aun queda Coca-cola.");
         }
         if(sprite.isEmpty()){
             for (int i = 0; i < cantidad; i++){
                 Bebida aux_sprite = new Sprite();
                 sprite.addBebida(aux_sprite);
             }
+        } else {
+            System.out.println("Aun queda Sprite.");
         }
         if(fanta.isEmpty()){
             for (int i = 0; i < cantidad; i++){
                 Bebida aux_fanta = new Fanta();
                 fanta.addBebida(aux_fanta);
             }
+        } else {
+            System.out.println("Aun queda Fanta.");
         }
     }
     
@@ -206,7 +212,11 @@ public class Expendedor extends JPanel{
         return precio;
     }
     
-    public Boolean depositoCompra(){
+    public DepositoCompra getCompra(){
+        return compra;
+    }
+    
+    public Boolean depositoLleno(){
         if(compra != null){
             return true;
         }

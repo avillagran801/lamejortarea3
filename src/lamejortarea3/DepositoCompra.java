@@ -25,6 +25,12 @@ class DepositoCompra extends JPanel {
         bebida = bebida_aux;
     }
     
+    public Bebida getBebida(){
+        Bebida aux_bebida = bebida;
+        bebida = null;
+        return aux_bebida;
+    }
+    
     public Boolean depositoVacio(){
         if(bebida == null){
             return true;
