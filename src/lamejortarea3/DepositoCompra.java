@@ -6,17 +6,7 @@ import javax.swing.JPanel;
 
 class DepositoCompra extends JPanel {
     private Bebida bebida;
-    
-    public void agregarBebida(Bebida bebida_aux){
-        if(bebida == null){
-            System.out.println("Bebida guardada en el depósito");
-            bebida = bebida_aux;
-        }
-        else{
-            System.out.println("Ya hay una bebida en el depósito");
-        }
-    }
-    
+        
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -28,6 +18,19 @@ class DepositoCompra extends JPanel {
             Graphics g_aux = g.create();
             g_aux.translate(825, 515);
             bebida.paintComponent(g_aux);
+        }
+    }
+    
+    public void agregarBebida(Bebida bebida_aux){
+        bebida = bebida_aux;
+    }
+    
+    public Boolean depositoVacio(){
+        if(bebida == null){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 }

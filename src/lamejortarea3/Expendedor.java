@@ -81,27 +81,46 @@ public class Expendedor extends JPanel{
                         if(coca.isEmpty()){
                             throw new NoHayBebidaException("No queda Coca-cola.");
                         }
-                        monedas.add(m);
-                        Expendedor.this.crearVuelto(m);
-                        compra.agregarBebida(coca.getBebida());
+
+                        if(compra.depositoVacio()){
+                            System.out.println("Bebida guardada en el depósito");
+                            compra.agregarBebida(coca.getBebida());
+                            monedas.add(m);
+                            Expendedor.this.crearVuelto(m);
+                        }
+                        else{
+                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                        }
                         break;
 
                     case 1:
                         if(sprite.isEmpty()){
                             throw new NoHayBebidaException("No queda Sprite.");
                         }
-                        monedas.add(m);
-                        Expendedor.this.crearVuelto(m);
-                        compra.agregarBebida(sprite.getBebida());
+                        if(compra.depositoVacio()){
+                            System.out.println("Bebida guardada en el depósito");
+                            compra.agregarBebida(sprite.getBebida());
+                            monedas.add(m);
+                            Expendedor.this.crearVuelto(m);
+                        }
+                        else{
+                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                        }
                         break;
 
                     case 2:
                         if(fanta.isEmpty()){
                             throw new NoHayBebidaException("No queda Fanta.");
                         }
-                        monedas.add(m);
-                        Expendedor.this.crearVuelto(m);
-                        compra.agregarBebida(fanta.getBebida());
+                        if(compra.depositoVacio()){
+                            System.out.println("Bebida guardada en el depósito");
+                            compra.agregarBebida(fanta.getBebida());
+                            monedas.add(m);
+                            Expendedor.this.crearVuelto(m);
+                        }
+                        else{
+                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                        }
                         break;
                     
                     default:
@@ -131,6 +150,12 @@ public class Expendedor extends JPanel{
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
             vuelto.add(m);
             // return null;
+        }
+        catch (BebidaSinRetirarException ex){
+            System.out.println("Exception in thread \"main\" "
+                    + "BebidaSinRetirarException.");
+            System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
+            vuelto.add(m);
         }
     }
     
