@@ -3,10 +3,10 @@ package lamejortarea3;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class BotonesBebida{
+class Botones{
     private PanelPrincipal pp;
      
-    public BotonesBebida(PanelPrincipal pp_aux){
+    public Botones(PanelPrincipal pp_aux){
         pp = pp_aux;
         
         JButton b_coca = new JButton();
@@ -60,7 +60,7 @@ public class BotonesBebida{
         b_compra.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                takeOut(evt);
+                getBebida(evt);
             }
         });
         b_compra.setBounds(800, 470, 70, 100);
@@ -94,7 +94,7 @@ public class BotonesBebida{
         pp.repaint();
     }
     
-    private void takeOut(java.awt.event.MouseEvent evt){
+    private void getBebida(java.awt.event.MouseEvent evt){
         if(pp.getExpendedor().getCompra().depositoVacio()){
             System.out.println("No hay bebida que retirar.");
         } else {
