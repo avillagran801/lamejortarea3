@@ -27,14 +27,16 @@ class Comprador extends JPanel{
         g.fillPolygon(k_aux, j_aux, 4);
     }
     
-    public void ComprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){
+    public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){
         vuelto = 0;
         
-        Bebida aux_bebida = expendedor.comprarBebida(idBebida, moneda);
+        expendedor.comprarBebida(idBebida, moneda);
+        /*
         if (aux_bebida != null){
             // sabor = aux_bebida.beber();
             // System.out.println(sabor);
         }
+        */
         
         Boolean vuelto_fin = false;
                 

@@ -8,6 +8,7 @@ public class Expendedor extends JPanel{
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
+    private Bebida compra;
     private ArrayList<Moneda> vuelto;
     private ArrayList<Moneda> monedas;
     
@@ -57,11 +58,10 @@ public class Expendedor extends JPanel{
         // Deposito bebida comprada
         g.setColor(Color.DARK_GRAY);
         g.fillRect(800, 470, 70, 100);
-        
-        
+            
     }
     
-    public Bebida comprarBebida(int idBebida, Moneda m){
+    public void comprarBebida(int idBebida, Moneda m){
         // Decidimos aplicar el método try-catch dentro del bloque de código en
         // vez de afuera por temas de simplicidad.
         try {
@@ -77,7 +77,8 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        return coca.getBebida();
+                        compra = coca.getBebida();
+                        break;
 
                     case 1:
                         if(sprite.isEmpty()){
@@ -85,7 +86,8 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        return sprite.getBebida();
+                        compra = sprite.getBebida();
+                        break;
 
                     case 2:
                         if(fanta.isEmpty()){
@@ -93,10 +95,12 @@ public class Expendedor extends JPanel{
                         }
                         monedas.add(m);
                         Expendedor.this.crearVuelto(m);
-                        return fanta.getBebida();
+                        compra = fanta.getBebida();
+                        break;
                     
                     default:
                         throw new NoHayBebidaException("ID equivocado.");
+                    
                 }
             } else {
                 throw new PagoInsuficienteException("Dinero insuficiente.");
@@ -106,21 +110,21 @@ public class Expendedor extends JPanel{
             System.out.println("Exception in thread \"main\" "
                     + "PagoIncorrectoException.");
             System.out.println(ex.getMessage());
-            return null;
+            // return null;
         }
         catch (NoHayBebidaException ex){
             System.out.println("Exception in thread \"main\" "
                     + "NoHayBebidaException.");
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
             vuelto.add(m);
-            return null;
+            // return null;
         }
         catch (PagoInsuficienteException ex){
             System.out.println("Exception in thread \"main\" "
                     + "PagoInsuficienteException.");
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
             vuelto.add(m);
-            return null;
+            // return null;
         }
     }
     

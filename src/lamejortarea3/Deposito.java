@@ -19,7 +19,7 @@ class Deposito extends JPanel{
             return null;
         }
         else{
-            return d.remove(d.size()-1);
+            return d.remove(0);
         }
     }
     
