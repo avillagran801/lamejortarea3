@@ -9,9 +9,11 @@ class Deposito extends JPanel{
     public Deposito(){
         d = new ArrayList<Bebida>();
     }
+    
     public void addBebida(Bebida b){
         d.add(b);
     }
+    
     public Bebida getBebida(){
         if(d.isEmpty()){
             return null;
@@ -20,9 +22,11 @@ class Deposito extends JPanel{
             return d.remove(d.size()-1);
         }
     }
+    
     public Boolean isEmpty(){
         return d.isEmpty();
     }
+    
     public void paint(Graphics g){
         if(d.isEmpty()){
             return;
@@ -30,23 +34,23 @@ class Deposito extends JPanel{
             Bebida aux = d.get(0);
             Graphics g_aux = g.create();
             if(aux.getSabor() == "cocacola"){
-                g_aux.translate(550, 220);
+                g_aux.translate(596, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(30, 0);
+                    g_aux.translate(0, -52);
                     aux.paint(g_aux);
                 }
             }
             if(aux.getSabor() == "sprite"){
-                g_aux.translate(550, 320);
+                g_aux.translate(660, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(30, 0);
+                    g_aux.translate(0, -52);
                     aux.paint(g_aux);
                 }
             }
             if(aux.getSabor() == "fanta"){
-                g_aux.translate(550, 420);
+                g_aux.translate(724, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(30, 0);
+                    g_aux.translate(0, -52);
                     aux.paint(g_aux);
                 }
             }

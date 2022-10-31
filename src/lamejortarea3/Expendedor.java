@@ -9,6 +9,7 @@ public class Expendedor extends JPanel{
     private Deposito sprite;
     private Deposito fanta;
     private ArrayList<Moneda> vuelto;
+    private ArrayList<Moneda> monedas;
     
     public Expendedor(int cant, int precio_aux){
         precio = precio_aux;
@@ -16,6 +17,7 @@ public class Expendedor extends JPanel{
         sprite = new Deposito();
         fanta = new Deposito();
         vuelto = new ArrayList<Moneda>();
+        monedas = new ArrayList<Moneda>();
         
         for(int i=0; i<cant; i++){
            Bebida aux_coca = new CocaCola();
@@ -26,6 +28,13 @@ public class Expendedor extends JPanel{
            sprite.addBebida(aux_sprite);
            fanta.addBebida(aux_fanta);
         }
+        
+        /*this.setLayout(null);
+        JButton boton_coca = new JButton("Coca-cola");
+        //775, 170
+        boton_coca.setBounds(0, 0, 30, 30);
+        this.add(boton_coca);*/
+        
     }
     
     @Override
@@ -41,9 +50,10 @@ public class Expendedor extends JPanel{
         
         // Depositos
         g.setColor(Color.BLACK);
-        g.fillRect(570, 260, 200, 10);
-        g.fillRect(570, 360, 200, 10);
-        g.fillRect(570, 460, 200, 10);
+        g.fillRect(570, 170, 8, 330);
+        g.fillRect(634, 170, 8, 330);
+        g.fillRect(698, 170, 8, 330);
+        g.fillRect(762, 170, 8, 330);
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
@@ -63,6 +73,7 @@ public class Expendedor extends JPanel{
                         if(coca.isEmpty()){
                             throw new NoHayBebidaException("No queda Coca-cola.");
                         }
+                        monedas.add(m);
                         Expendedor.this.crearVuelto(m);
                         return coca.getBebida();
 
@@ -70,6 +81,7 @@ public class Expendedor extends JPanel{
                         if(sprite.isEmpty()){
                             throw new NoHayBebidaException("No queda Sprite.");
                         }
+                        monedas.add(m);
                         Expendedor.this.crearVuelto(m);
                         return sprite.getBebida();
 
@@ -77,6 +89,7 @@ public class Expendedor extends JPanel{
                         if(fanta.isEmpty()){
                             throw new NoHayBebidaException("No queda Fanta.");
                         }
+                        monedas.add(m);
                         Expendedor.this.crearVuelto(m);
                         return fanta.getBebida();
                     

@@ -3,16 +3,14 @@ import java.awt.*;
 import javax.swing.*;
 
 public class PanelPrincipal extends JPanel{
-    private JPanel panelp;
     private Comprador con;
     private Expendedor exp;
     
     public PanelPrincipal(){
         exp = new Expendedor (10, 1000);
         con = new Comprador ();
-        panelp = new JPanel();
+        this.setLayout(null);
         this.setBackground(Color.blue);
-        this.setBounds(300, 300, 300, 300);
         /*this.setLayout(new BorderLayout());
         this.setSize(800,600);
         this.setVisible(true);*/
