@@ -5,6 +5,7 @@ import javax.swing.*;
 
 public class Expendedor extends JPanel{
     private int precio;
+    private int cantidad;
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
@@ -19,8 +20,9 @@ public class Expendedor extends JPanel{
         fanta = new Deposito();
         vuelto = new ArrayList<Moneda>();
         monedas = new ArrayList<Moneda>();
+        cantidad = cant;
         
-        for(int i=0; i<cant; i++){
+        for(int i=0; i < cantidad; i++){
            Bebida aux_coca = new CocaCola();
            Bebida aux_sprite = new Sprite();
            Bebida aux_fanta = new Fanta();
@@ -140,6 +142,27 @@ public class Expendedor extends JPanel{
                 vuelto.add(m100_aux);
             }
             System.out.println("Hay vuelto disponible.");
+        }
+    }
+    
+    public void rellenarDepositos(){
+        if(coca.isEmpty()){
+            for (int i = 0; i < cantidad; i++){
+                Bebida aux_coca = new CocaCola();
+                coca.addBebida(aux_coca);
+            }
+        }
+        if(sprite.isEmpty()){
+            for (int i = 0; i < cantidad; i++){
+                Bebida aux_sprite = new Sprite();
+                sprite.addBebida(aux_sprite);
+            }
+        }
+        if(fanta.isEmpty()){
+            for (int i = 0; i < cantidad; i++){
+                Bebida aux_fanta = new Fanta();
+                fanta.addBebida(aux_fanta);
+            }
         }
     }
     

@@ -27,6 +27,10 @@ class Deposito extends JPanel{
         return d.isEmpty();
     }
     
+    public int arraySize(){
+        return d.size();
+    }
+    
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);

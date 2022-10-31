@@ -47,17 +47,18 @@ public class BotonesBebida{
     private void comprarCoca(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Coca");
         pp.getComprador().comprarBebida(0, new Moneda1500(), pp.getExpendedor()); // ESTO ES DE PRUEBA
+        pp.repaint();
     }
     
     private void comprarSprite(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Sprite");
         pp.getComprador().comprarBebida(1, new Moneda1500(), pp.getExpendedor());
-        
+        pp.repaint();
     }
     
     private void comprarFanta(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Fanta");
         pp.getComprador().comprarBebida(2, new Moneda1500(), pp.getExpendedor());
-        
+        pp.repaint();
     }
 }

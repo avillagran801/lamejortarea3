@@ -8,7 +8,7 @@ public class PanelPrincipal extends JPanel{
     private Moneda1000 m1000;
     
     public PanelPrincipal(){
-        exp = new Expendedor (10, 1000);
+        exp = new Expendedor (5, 1000);
         con = new Comprador ();
         
         this.setLayout(null);
