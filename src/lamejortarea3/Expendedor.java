@@ -58,6 +58,10 @@ public class Expendedor extends JPanel{
         // Deposito bebida comprada
         g.setColor(Color.DARK_GRAY);
         g.fillRect(800, 470, 70, 100);
+                
+        // Deposito monedas
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(810, 380, 50, 50);
             
     }
     

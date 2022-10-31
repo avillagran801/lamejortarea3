@@ -19,7 +19,7 @@ public class BotonesBebida{
                 comprarCoca(evt);
             }
         });
-        b_coca.setBounds(815, 180, 30, 30);
+        b_coca.setBounds(820, 200, 30, 30);
         b_coca.setBackground(Color.red);
         pp.add(b_coca);
         
@@ -29,7 +29,7 @@ public class BotonesBebida{
                 comprarSprite(evt);
             }
         });
-        b_sprite.setBounds(815, 220, 30, 30);
+        b_sprite.setBounds(820, 240, 30, 30);
         b_sprite.setBackground(Color.green);
         pp.add(b_sprite);
         
@@ -39,7 +39,7 @@ public class BotonesBebida{
                 comprarFanta(evt);
             }
         });
-        b_fanta.setBounds(815, 260, 30, 30);
+        b_fanta.setBounds(820, 280, 30, 30);
         b_fanta.setBackground(Color.orange);
         pp.add(b_fanta);
     }
