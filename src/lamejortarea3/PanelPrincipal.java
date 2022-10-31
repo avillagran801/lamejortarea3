@@ -3,8 +3,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class PanelPrincipal extends JPanel{
-    public Comprador con;
-    public Expendedor exp;
+    private Comprador con;
+    private Expendedor exp;
     private Moneda1000 m1000;
     
     public PanelPrincipal(){
@@ -13,16 +13,21 @@ public class PanelPrincipal extends JPanel{
         
         this.setLayout(null);
         this.setBackground(Color.blue);
-        /*this.setLayout(new BorderLayout());
-        this.setSize(800,600);
-        this.setVisible(true);*/
+    }
+    
+    public Comprador getComprador(){
+        return con;
+    }
+    
+    public Expendedor getExpendedor(){
+        return exp;
     }
     
     @Override
-    public void paint (Graphics g){
-        super.paint(g);
-        con.paint(g);
-        exp.paint(g);
+    public void paintComponent (Graphics g){
+        super.paintComponent(g);
+        con.paintComponent(g);
+        exp.paintComponent(g);
     }
     
 }

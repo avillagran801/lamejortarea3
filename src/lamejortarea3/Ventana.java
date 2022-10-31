@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Ventana extends JFrame {
     PanelPrincipal pp;
     BotonesBebida bb;
-    //JLabel tag;
+    
     public Ventana(){
         super();
         this.setLayout(new BorderLayout());
@@ -15,10 +15,9 @@ public class Ventana extends JFrame {
         this.getContentPane().add(pp);
         bb = new BotonesBebida(pp);
         
-        
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1000,800);
-        this.setLocationRelativeTo(null); // Aparaece al centro
+        this.setLocationRelativeTo(null);
         this.setVisible(true); 
 
     }

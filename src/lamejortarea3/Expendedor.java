@@ -28,18 +28,11 @@ public class Expendedor extends JPanel{
            sprite.addBebida(aux_sprite);
            fanta.addBebida(aux_fanta);
         }
-        
-        /*this.setLayout(null);
-        JButton boton_coca = new JButton("Coca-cola");
-        //775, 170
-        boton_coca.setBounds(0, 0, 30, 30);
-        this.add(boton_coca);*/
-        
     }
     
     @Override
-    public void paint(Graphics g){
-        super.paint(g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         // Máquina
         g.setColor(Color.lightGray);
         g.fillRect(550, 150, 350, 450);
@@ -57,9 +50,9 @@ public class Expendedor extends JPanel{
         g.fillRect(634, 170, 8, 330);
         g.fillRect(698, 170, 8, 330);
         g.fillRect(762, 170, 8, 330);
-        coca.paint(g);
-        sprite.paint(g);
-        fanta.paint(g);
+        coca.paintComponent(g);
+        sprite.paintComponent(g);
+        fanta.paintComponent(g);
         
         // Deposito bebida comprada
         g.setColor(Color.DARK_GRAY);
@@ -156,5 +149,4 @@ public class Expendedor extends JPanel{
     public int getPrecio(){
         return precio;
     }
-    
 }

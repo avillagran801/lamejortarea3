@@ -27,7 +27,9 @@ class Deposito extends JPanel{
         return d.isEmpty();
     }
     
-    public void paint(Graphics g){
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         if(d.isEmpty()){
             return;
         } else {
@@ -37,21 +39,21 @@ class Deposito extends JPanel{
                 g_aux.translate(596, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
                     g_aux.translate(0, -52);
-                    aux.paint(g_aux);
+                    aux.paintComponent(g_aux);
                 }
             }
             if(aux.getSabor() == "sprite"){
                 g_aux.translate(660, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
                     g_aux.translate(0, -52);
-                    aux.paint(g_aux);
+                    aux.paintComponent(g_aux);
                 }
             }
             if(aux.getSabor() == "fanta"){
                 g_aux.translate(724, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
                     g_aux.translate(0, -52);
-                    aux.paint(g_aux);
+                    aux.paintComponent(g_aux);
                 }
             }
         }

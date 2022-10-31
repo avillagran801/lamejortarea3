@@ -10,8 +10,8 @@ class Comprador extends JPanel{
     }
     
     @Override
-    public void paint(Graphics g){
-        super.paint(g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         // Cabeza
         g.setColor(Color.green);
         g.fillOval(200, 200, 100, 100);

@@ -3,9 +3,9 @@ package lamejortarea3;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class BotonesBebida {
+public class BotonesBebida{
     private PanelPrincipal pp;
-    
+     
     public BotonesBebida(PanelPrincipal pp_aux){
         pp = pp_aux;
         
@@ -14,6 +14,7 @@ public class BotonesBebida {
         JButton b_fanta = new JButton();
         
         b_coca.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 comprarCoca(evt);
             }
@@ -21,8 +22,9 @@ public class BotonesBebida {
         b_coca.setBounds(815, 180, 30, 30);
         b_coca.setBackground(Color.red);
         pp.add(b_coca);
-    
+        
         b_sprite.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 comprarSprite(evt);
             }
@@ -32,6 +34,7 @@ public class BotonesBebida {
         pp.add(b_sprite);
         
         b_fanta.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 comprarFanta(evt);
             }
@@ -43,18 +46,18 @@ public class BotonesBebida {
         
     private void comprarCoca(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Coca");
-        pp.con.ComprarBebida(0, new Moneda1000(), pp.exp); // ESTO ES DE PRUEBA
+        pp.getComprador().ComprarBebida(0, new Moneda1000(), pp.getExpendedor()); // ESTO ES DE PRUEBA
     }
     
     private void comprarSprite(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Sprite");
-        pp.con.ComprarBebida(1, new Moneda1000(), pp.exp);
+        pp.getComprador().ComprarBebida(1, new Moneda1000(), pp.getExpendedor());
         
     }
     
     private void comprarFanta(java.awt.event.MouseEvent evt){
         System.out.println("Comprar Fanta");
-        pp.con.ComprarBebida(2, new Moneda1000(), pp.exp);
+        pp.getComprador().ComprarBebida(2, new Moneda1000(), pp.getExpendedor());
         
     }
 }

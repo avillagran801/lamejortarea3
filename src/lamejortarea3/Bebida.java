@@ -9,7 +9,7 @@ abstract class Bebida extends JPanel {
     public abstract String getSabor();
     
     @Override
-    public void paint(Graphics g){};
+    public void paintComponent(Graphics g){};
 }
 
 class Sprite extends Bebida{
@@ -24,8 +24,8 @@ class Sprite extends Bebida{
         return "sprite";
     }
     @Override
-    public void paint(Graphics g){
-        super.paint(g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         g.setColor(Color.white);
         g.fillRect(0, 0, 20, 40);
         g.setColor(Color.green);
@@ -45,8 +45,8 @@ class CocaCola extends Bebida{
         return "cocacola";
     }
     @Override
-    public void paint(Graphics g){
-        super.paint(g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         g.setColor(Color.black);
         g.fillRect(0, 0, 20, 40);
         g.setColor(Color.red);
@@ -66,8 +66,8 @@ class Fanta extends Bebida{
         return "fanta";
     }
     @Override
-    public void paint(Graphics g){
-        super.paint(g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
         g.setColor(Color.orange);
         g.fillRect(0, 0, 20, 40);
     }
