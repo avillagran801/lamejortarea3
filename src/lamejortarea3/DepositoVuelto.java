@@ -66,17 +66,4 @@ public class DepositoVuelto extends JPanel{
             return null;
         }
     }
-    
-    /*
-    public Moneda getVuelto(){
-        if(vuelto.isEmpty()){
-            System.out.println("Ya no queda vuelto que dar.");
-            return null;
-        } else {
-            System.out.println("Quedan " + (vuelto.size() - 1) + 
-                    " monedas en el deposito.");
-            return vuelto.remove(0);
-        }
-    }
-    */
 }
