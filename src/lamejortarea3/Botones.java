@@ -3,7 +3,7 @@ package lamejortarea3;
 import java.awt.Color;
 import javax.swing.JButton;
 
-class Botones{
+public class Botones{
     private PanelPrincipal pp;
      
     public Botones(PanelPrincipal pp_aux){
@@ -14,6 +14,7 @@ class Botones{
         JButton b_fanta = new JButton();
         JButton b_depositos = new JButton();
         JButton b_compra = new JButton();
+        JButton b_monedas = new JButton();
         
         b_coca.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -68,39 +69,56 @@ class Botones{
         b_compra.setContentAreaFilled(false);
         //b_compra.setBorderPainted(false);
         pp.add(b_compra);
+        
+        b_monedas.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                getVuelto(evt);
+            }
+        });
+        b_monedas.setBounds(810, 380, 50, 50);
+        b_monedas.setOpaque(false);
+        b_monedas.setContentAreaFilled(false);
+        //b_compra.setBorderPainted(false);
+        pp.add(b_monedas);
     }
         
     private void comprarCoca(java.awt.event.MouseEvent evt){
-        System.out.println("Comprar Coca");
+        System.out.println("\n*** Comprar Coca ***");
         pp.getComprador().comprarBebida(0, new Moneda1500(), pp.getExpendedor()); // ESTO ES DE PRUEBA
         pp.repaint();
     }
     
     private void comprarSprite(java.awt.event.MouseEvent evt){
-        System.out.println("Comprar Sprite");
+        System.out.println("\n*** Comprar Sprite ***");
         pp.getComprador().comprarBebida(1, new Moneda1500(), pp.getExpendedor());
         pp.repaint();
     }
     
     private void comprarFanta(java.awt.event.MouseEvent evt){
-        System.out.println("Comprar Fanta");
+        System.out.println("\n*** Comprar Fanta ***");
         pp.getComprador().comprarBebida(2, new Moneda1500(), pp.getExpendedor());
         pp.repaint();
     }
     
     private void refill(java.awt.event.MouseEvent evt){
-        System.out.println("Rellenando depositos...");
+        System.out.println("\nRellenando depositos...");
         pp.getExpendedor().rellenarDepositos();
         pp.repaint();
     }
     
     private void getBebida(java.awt.event.MouseEvent evt){
         if(pp.getExpendedor().getCompra().depositoVacio()){
-            System.out.println("No hay bebida que retirar.");
+            System.out.println("\nNo hay bebida que retirar.");
         } else {
-            System.out.println("Bebida retirada.");
+            System.out.println("\nBebida retirada.");
             pp.getExpendedor().getCompra().getBebida();
             pp.repaint();
         }
+    }
+    
+    private void getVuelto(java.awt.event.MouseEvent evt){
+        pp.getComprador().retirarVuelto(pp.getExpendedor());
+        pp.repaint();
     }
 }

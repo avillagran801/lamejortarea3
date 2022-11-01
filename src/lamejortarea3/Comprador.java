@@ -2,7 +2,7 @@ package lamejortarea3;
 import java.awt.*;
 import javax.swing.*;
 
-class Comprador extends JPanel{
+public class Comprador extends JPanel{
     private String sabor;
     private int vuelto;
     
@@ -27,16 +27,21 @@ class Comprador extends JPanel{
         g.fillPolygon(k_aux, j_aux, 4);
     }
     
-    public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){
-        vuelto = 0;
-        
+    public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){        
         expendedor.comprarBebida(idBebida, moneda);
-        
+
+        /*
+        if (moneda != null){
+            System.out.println("Precio bebida: $" + expendedor.getPrecio() + 
+                    "\nMonto abonado: $" + moneda.getValor() + "\nVuelto: $" + 
+                    vuelto);
+        }
+        */
+    }
+    
+    public void retirarVuelto(Expendedor expendedor){
+        vuelto = 0;
         Boolean vuelto_fin = false;
-                
-        // Esto hace que el vuelto termine de entregarse ya sea cuando 
-        // se entregue la misma moneda o cuando terminen las monedas de
-        // $100 para la diferencia
         
         while(!vuelto_fin){
             Moneda vuelto_aux = expendedor.getVuelto();
@@ -46,11 +51,7 @@ class Comprador extends JPanel{
                 vuelto_fin = true;
             }
         }
-
-        if (moneda != null){
-            System.out.println("Precio bebida: $" + expendedor.getPrecio() + 
-                    "\nMonto abonado: $" + moneda.getValor() + "\nVuelto: $" + 
-                    vuelto);
-        }
+        
+        System.out.println("\nTotal retirado: $" + vuelto);
     }
 }

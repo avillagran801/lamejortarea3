@@ -1,18 +1,14 @@
 package lamejortarea3;
 
-// getSerie() funciona como el toString() de esta clase. toString(), por su
-// parte, nos devuelve la dirección de memoria para usarla de serie.
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
 
-abstract class Moneda {        
+abstract class Moneda extends JPanel {        
     
-    public abstract String getSerie();     // A diferencia del prototipo del pdf,
-                                        // el método getSerie() será abstracto.
-                                        // No se puede devolver un valor 
-                                        // estático en un objeto dinámico
-    public abstract int getValor();     // (en este caso, abstracto)
-                                        // toString() estará por individual en
-                                        // cada objeto heredado de moneda
-                                        // para no hacer múltiples Overrides.
+    public abstract String getSerie();
+    public abstract int getValor();
+    // public abstract void paintComponent(Graphics g);
 }
 
 class Moneda1500 extends Moneda {
@@ -26,7 +22,14 @@ class Moneda1500 extends Moneda {
     
     public int getValor(){
         return 1500;
-    }   
+    }
+    
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        g.setColor(Color.yellow);
+        g.fillRect(100, 100, 10, 10);
+    }
 }
 
 class Moneda1000 extends Moneda {
@@ -40,6 +43,14 @@ class Moneda1000 extends Moneda {
     
     public int getValor(){
         return 1000;
+    }
+    
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        g.setColor(Color.green);
+        g.fillRect(100, 100, 10, 10);
     }
 }
 
@@ -55,6 +66,14 @@ class Moneda500 extends Moneda {
     public int getValor(){
         return 500;
     }
+    
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        g.setColor(Color.pink);
+        g.fillRect(100, 100, 10, 10);
+    }
 }
 
 class Moneda100 extends Moneda {
@@ -68,5 +87,13 @@ class Moneda100 extends Moneda {
     
     public int getValor(){
         return 100;
+    }
+    
+        @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        g.setColor(Color.blue);
+        g.fillRect(100, 100, 10, 10);
     }
 }

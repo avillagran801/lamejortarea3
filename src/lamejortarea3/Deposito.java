@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import javax.swing.*;
 
-class Deposito extends JPanel{
+public class Deposito extends JPanel{
     private ArrayList<Bebida> d;
     
     public Deposito(){

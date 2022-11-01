@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-class DepositoCompra extends JPanel {
+public class DepositoCompra extends JPanel {
     private Bebida bebida;
         
     @Override

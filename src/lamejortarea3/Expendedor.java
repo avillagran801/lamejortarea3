@@ -10,7 +10,8 @@ public class Expendedor extends JPanel{
     private Deposito sprite;
     private Deposito fanta;
     private DepositoCompra compra;
-    private ArrayList<Moneda> vuelto;
+    private DepositoVuelto vuelto;
+    // private ArrayList<Moneda> vuelto;
     private ArrayList<Moneda> monedas;
     
     public Expendedor(int cant, int precio_aux){
@@ -19,7 +20,8 @@ public class Expendedor extends JPanel{
         sprite = new Deposito();
         fanta = new Deposito();
         compra = new DepositoCompra();
-        vuelto = new ArrayList<Moneda>();
+        vuelto = new DepositoVuelto();
+        // vuelto = new ArrayList<Moneda>();
         monedas = new ArrayList<Moneda>();
         cantidad = cant;
         
@@ -61,9 +63,8 @@ public class Expendedor extends JPanel{
         // Deposito bebida comprada
         compra.paintComponent(g);
                 
-        // Deposito monedas
-        g.setColor(Color.DARK_GRAY);
-        g.fillRect(810, 380, 50, 50);
+        // Deposito vuelto
+        vuelto.paintComponent(g);
             
     }
     
@@ -86,7 +87,8 @@ public class Expendedor extends JPanel{
                             System.out.println("Bebida guardada en el depósito");
                             compra.agregarBebida(coca.getBebida());
                             monedas.add(m);
-                            Expendedor.this.crearVuelto(m);
+                            // Expendedor.this.crearVuelto(m)
+                            vuelto.crearVuelto(m, precio);
                         }
                         else{
                             throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
@@ -101,7 +103,8 @@ public class Expendedor extends JPanel{
                             System.out.println("Bebida guardada en el depósito");
                             compra.agregarBebida(sprite.getBebida());
                             monedas.add(m);
-                            Expendedor.this.crearVuelto(m);
+                            // Expendedor.this.crearVuelto(m);
+                            vuelto.crearVuelto(m, precio);
                         }
                         else{
                             throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
@@ -116,7 +119,8 @@ public class Expendedor extends JPanel{
                             System.out.println("Bebida guardada en el depósito");
                             compra.agregarBebida(fanta.getBebida());
                             monedas.add(m);
-                            Expendedor.this.crearVuelto(m);
+                            // Expendedor.this.crearVuelto(m);
+                            vuelto.crearVuelto(m, precio);
                         }
                         else{
                             throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
@@ -135,30 +139,31 @@ public class Expendedor extends JPanel{
             System.out.println("Exception in thread \"main\" "
                     + "PagoIncorrectoException.");
             System.out.println(ex.getMessage());
-            // return null;
         }
         catch (NoHayBebidaException ex){
             System.out.println("Exception in thread \"main\" "
                     + "NoHayBebidaException.");
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
-            vuelto.add(m);
-            // return null;
+            // vuelto.add(m);
+            vuelto.addMoneda(m);
         }
         catch (PagoInsuficienteException ex){
             System.out.println("Exception in thread \"main\" "
                     + "PagoInsuficienteException.");
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
-            vuelto.add(m);
-            // return null;
+            //vuelto.add(m);
+            vuelto.addMoneda(m);
         }
         catch (BebidaSinRetirarException ex){
             System.out.println("Exception in thread \"main\" "
                     + "BebidaSinRetirarException.");
             System.out.println(ex.getMessage() + "\nSu moneda ha sido devuelta.");
-            vuelto.add(m);
+            // vuelto.add(m);
+            vuelto.addMoneda(m);
         }
     }
     
+    /*
     private void crearVuelto(Moneda coin_aux){
         // Un método privado, ya que solo el Expendedor puede crear vuelto.
         if (coin_aux.getValor() > precio) {
@@ -169,6 +174,7 @@ public class Expendedor extends JPanel{
             System.out.println("Hay vuelto disponible.");
         }
     }
+    */
     
     public void rellenarDepositos(){
         if(coca.isEmpty()){
@@ -198,6 +204,11 @@ public class Expendedor extends JPanel{
     }
     
     public Moneda getVuelto(){
+        return vuelto.getMoneda();
+    }
+    
+    /*
+    public Moneda getVuelto(){
         if(vuelto.isEmpty()){
             System.out.println("Ya no queda vuelto que dar.");
             return null;
@@ -207,6 +218,7 @@ public class Expendedor extends JPanel{
             return vuelto.remove(0);
         }
     }
+    */
     
     public int getPrecio(){
         return precio;
