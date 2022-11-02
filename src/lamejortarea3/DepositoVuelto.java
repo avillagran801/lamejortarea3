@@ -21,10 +21,11 @@ public class DepositoVuelto extends JPanel{
         
         if(!vuelto.isEmpty()){
             Graphics g_aux = g.create();
-            for(int i=0; i<vuelto.size(); ++i){
-                g_aux.translate(0, -52);
+            g_aux.translate(0, 10);
+            g_aux.setColor(Color.YELLOW);
+            for(int i=0; i<vuelto.size(); i++){
                 // VER CÓMO HACER VISIBLES LAS MONEDAS
-                // vuelto.get(i).paintComponents(g_aux);
+                vuelto.get(i).paintComponent(g_aux);
             }
         }
     }

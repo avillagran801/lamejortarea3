@@ -8,7 +8,9 @@ abstract class Moneda extends JPanel {
     
     public abstract String getSerie();
     public abstract int getValor();
-    // public abstract void paintComponent(Graphics g);
+        
+    @Override
+    public void paintComponent(Graphics g){};
 }
 
 class Moneda1500 extends Moneda {
@@ -24,11 +26,12 @@ class Moneda1500 extends Moneda {
         return 1500;
     }
     
+    @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         
         g.setColor(Color.yellow);
-        g.fillRect(100, 100, 10, 10);
+        g.fillRect(0, 0, 10, 10);
     }
 }
 
@@ -50,7 +53,7 @@ class Moneda1000 extends Moneda {
         super.paintComponent(g);
         
         g.setColor(Color.green);
-        g.fillRect(100, 100, 10, 10);
+        g.fillRect(0, 0, 10, 10);
     }
 }
 
@@ -72,7 +75,7 @@ class Moneda500 extends Moneda {
         super.paintComponent(g);
         
         g.setColor(Color.pink);
-        g.fillRect(100, 100, 10, 10);
+        g.fillRect(0, 0, 10, 10);
     }
 }
 
@@ -89,11 +92,11 @@ class Moneda100 extends Moneda {
         return 100;
     }
     
-        @Override
+    @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         
         g.setColor(Color.blue);
-        g.fillRect(100, 100, 10, 10);
+        g.fillRect(0, 0, 10, 10);
     }
 }
