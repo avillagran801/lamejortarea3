@@ -74,7 +74,7 @@ public class Botones{
                 getVuelto(evt);
             }
         });
-        b_monedas.setBounds(810, 380, 50, 50);
+        b_monedas.setBounds(810, 360, 50, 70);
         b_monedas.setOpaque(false);
         b_monedas.setContentAreaFilled(false);
         pp.add(b_monedas);

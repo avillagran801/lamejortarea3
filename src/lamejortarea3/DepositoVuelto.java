@@ -17,14 +17,24 @@ public class DepositoVuelto extends JPanel{
         super.paintComponent(g);
         
         g.setColor(Color.DARK_GRAY);
-        g.fillRect(810, 380, 50, 50);
+        g.fillRect(810, 360, 50, 70);
         
-        if(!vuelto.isEmpty()){
+         if(!vuelto.isEmpty()){
             Graphics g_aux = g.create();
-            g_aux.translate(830, 400);
-            for(int i=0; i<vuelto.size(); i++){
-                // VER CÓMO HACER VISIBLES LAS MONEDAS
-                vuelto.get(i).paintComponent(g_aux);
+            
+            for(int i=0; i<vuelto.size(); ++i){
+
+                if(i == 4 || i == 8){
+                    g_aux.translate(15, 45);
+                    vuelto.get(i).paintComponent(g_aux);
+                }
+                else{
+                    if(i == 12){
+                        break;
+                    }
+                    g_aux.translate(0,-15);
+                    vuelto.get(i).paintComponent(g_aux);
+                }    
             }
         }
     }

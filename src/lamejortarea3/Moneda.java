@@ -28,8 +28,8 @@ class Moneda1500 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.setColor(Color.yellow);
-        g.fillRect(0, 0, 10, 10);
+       g.setColor(Color.yellow);
+        g.fillOval(815, 425, 10, 10);
     }
 }
 
@@ -51,7 +51,7 @@ class Moneda1000 extends Moneda {
         super.paintComponent(g);
         
         g.setColor(Color.green);
-        g.fillRect(0, 0, 10, 10);
+        g.fillOval(815, 425, 10, 10);
     }
 }
 
@@ -73,7 +73,7 @@ class Moneda500 extends Moneda {
         super.paintComponent(g);
         
         g.setColor(Color.pink);
-        g.fillRect(0, 0, 10, 10);
+        g.fillOval(815, 425, 10, 10);
     }
 }
 
@@ -95,6 +95,6 @@ class Moneda100 extends Moneda {
         super.paintComponent(g);
         
         g.setColor(Color.blue);
-        g.fillRect(0, 0, 10, 10);
+        g.fillOval(815, 425, 10, 10);
     }
 }
