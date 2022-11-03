@@ -1,5 +1,4 @@
 package lamejortarea3;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -29,7 +28,6 @@ class Moneda1500 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        
         g.setColor(Color.yellow);
         g.fillRect(0, 0, 10, 10);
     }

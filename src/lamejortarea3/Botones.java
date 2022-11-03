@@ -55,7 +55,6 @@ public class Botones{
         b_depositos.setBounds(570, 170, 200, 330);
         b_depositos.setOpaque(false);
         b_depositos.setContentAreaFilled(false);
-        //b_depositos.setBorderPainted(false);
         pp.add(b_depositos);
         
         b_compra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,7 +66,6 @@ public class Botones{
         b_compra.setBounds(800, 470, 70, 100);
         b_compra.setOpaque(false);
         b_compra.setContentAreaFilled(false);
-        //b_compra.setBorderPainted(false);
         pp.add(b_compra);
         
         b_monedas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,7 +77,6 @@ public class Botones{
         b_monedas.setBounds(810, 380, 50, 50);
         b_monedas.setOpaque(false);
         b_monedas.setContentAreaFilled(false);
-        //b_compra.setBorderPainted(false);
         pp.add(b_monedas);
     }
         
