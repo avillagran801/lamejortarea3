@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import java.awt.Font;
 
 public class DepositoVuelto extends JPanel{
     private ArrayList<Moneda> vuelto;
@@ -18,6 +19,10 @@ public class DepositoVuelto extends JPanel{
         
         g.setColor(Color.DARK_GRAY);
         g.fillRect(810, 360, 50, 70);
+        g.setColor(Color.white);
+        g.setFont(new Font("TimesRoman", 1, 20));
+        g.drawString("Hola, Pancho!", 100, 100);
+        g.drawString("Esto es una prueba", 100,120);
         
          if(!vuelto.isEmpty()){
             Graphics g_aux = g.create();
