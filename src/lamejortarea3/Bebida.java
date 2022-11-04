@@ -15,6 +15,8 @@ abstract class Bebida extends JPanel {
 class Sprite extends Bebida{
     public Sprite(){
         super();
+        this.setBounds(0, 0, 20, 40);
+        this.setOpaque(false);
     }
     public String beber(){
         System.out.println("Gluglu");
@@ -27,15 +29,17 @@ class Sprite extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.white);
-        g.fillRect(0, 0, 20, 40);
+        g.fillRect(this.getX(), this.getY(), 20, 40);
         g.setColor(Color.green);
-        g.fillRect(0, 10, 20, 15);
+        g.fillRect(this.getX(), this.getY()+10, 20, 15);
     }
 }
 
 class CocaCola extends Bebida{
     public CocaCola(){
         super();
+        this.setBounds(0, 0, 20, 40);
+        this.setOpaque(false);
     }
     public String beber(){
         System.out.println("Gluglu");
@@ -48,15 +52,17 @@ class CocaCola extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.black);
-        g.fillRect(0, 0, 20, 40);
+        g.fillRect(this.getX(), this.getY(), 20, 40);
         g.setColor(Color.red);
-        g.fillRect(0, 10, 20, 15);
+        g.fillRect(this.getX(), this.getY()+10, 20, 15);
     }
 }
 
 class Fanta extends Bebida{
     public Fanta(){
         super();
+        this.setBounds(0, 0, 20, 40);
+        this.setOpaque(false);
     }
     public String beber(){
         System.out.println("Gluglu");
@@ -69,6 +75,6 @@ class Fanta extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.orange);
-        g.fillRect(0, 0, 20, 40);
+        g.fillRect(this.getX(), this.getY(), 20, 40);
     }
 }

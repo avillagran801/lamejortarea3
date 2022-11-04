@@ -15,9 +15,8 @@ public class DepositoCompra extends JPanel {
         g.fillRect(800, 470, 70, 100);
         
         if(bebida != null){
-            Graphics g_aux = g.create();
-            g_aux.translate(825, 515);
-            bebida.paintComponent(g_aux);
+            bebida.setBounds(this.getX()+25, this.getY()+45, 20, 40);
+            bebida.paintComponent(g);
         }
     }
     

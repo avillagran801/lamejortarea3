@@ -25,6 +25,11 @@ public class Expendedor extends JPanel{
         monedas = new ArrayList<Moneda>();
         cantidad = cant;
         
+        this.setBounds(550, 150, 350, 450);
+        this.setOpaque(false);
+        compra.setBounds(this.getX()+250, this.getY()+320, 70, 100);
+        compra.setOpaque(false);
+        
         for(int i=0; i < cantidad; i++){
            Bebida aux_coca = new CocaCola();
            Bebida aux_sprite = new Sprite();
@@ -56,9 +61,9 @@ public class Expendedor extends JPanel{
         g.fillRect(634, 170, 8, 330);
         g.fillRect(698, 170, 8, 330);
         g.fillRect(762, 170, 8, 330);
-        coca.paintComponent(g);
-        sprite.paintComponent(g);
-        fanta.paintComponent(g);
+        coca.paintComponent(g, this);
+        sprite.paintComponent(g, this);
+        fanta.paintComponent(g, this);
         
         // Deposito bebida comprada
         compra.paintComponent(g);

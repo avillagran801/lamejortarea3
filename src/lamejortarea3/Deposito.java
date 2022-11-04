@@ -31,33 +31,31 @@ public class Deposito extends JPanel{
         return d.size();
     }
     
-    @Override
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g, Expendedor exp){
         super.paintComponent(g);
         if(d.isEmpty()){
             return;
         } else {
             Bebida aux = d.get(0);
-            Graphics g_aux = g.create();
             if(aux.getSabor() == "cocacola"){
-                g_aux.translate(596, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(0, -52);
-                    aux.paintComponent(g_aux);
+                    aux= d.get(i);
+                    aux.setBounds(exp.getX()+46, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.paintComponent(g);
                 }
             }
             if(aux.getSabor() == "sprite"){
-                g_aux.translate(660, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(0, -52);
-                    aux.paintComponent(g_aux);
+                    aux= d.get(i);
+                    aux.setBounds(exp.getX()+110, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.paintComponent(g);
                 }
             }
             if(aux.getSabor() == "fanta"){
-                g_aux.translate(724, 500);
                 for (int i = 0; i < d.size() && i < 6; i++){
-                    g_aux.translate(0, -52);
-                    aux.paintComponent(g_aux);
+                    aux= d.get(i);
+                    aux.setBounds(exp.getX()+174, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.paintComponent(g);
                 }
             }
         }
