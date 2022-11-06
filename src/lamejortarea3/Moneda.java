@@ -3,9 +3,17 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
-abstract class Moneda extends JPanel {        
+abstract class Moneda extends JPanel {
+    private String serie;
     
-    public abstract String getSerie();
+    public void setSerie(String aux){
+        serie = aux;
+    }
+    
+    public String getSerie(){
+        return serie;
+    }
+    
     public abstract int getValor();
         
     @Override
@@ -17,9 +25,11 @@ class Moneda1500 extends Moneda {
         super();
     }
     
+    /*
     public String getSerie(){
         return "Moneda de 1500.\nNúmero de serie: " + this.toString();
     }
+    */
     
     public int getValor(){
         return 1500;
@@ -38,9 +48,11 @@ class Moneda1000 extends Moneda {
         super();
     }
     
+    /*
     public String getSerie(){
         return "Moneda de 1000.\nNúmero de serie: " + this.toString();
     }
+    */
     
     public int getValor(){
         return 1000;
@@ -60,9 +72,11 @@ class Moneda500 extends Moneda {
         super();
     }
     
+    /*
     public String getSerie(){
         return "Moneda de 500.\nNúmero de serie: " + this.toString();
     }
+    */
     
     public int getValor(){
         return 500;
@@ -82,9 +96,11 @@ class Moneda100 extends Moneda {
         super();
     }
     
+    /*
     public String getSerie(){
         return "Moneda de 100.\nNúmero de serie: " + this.toString();
     }
+    */
     
     public int getValor(){
         return 100;

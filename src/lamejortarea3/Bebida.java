@@ -26,7 +26,7 @@ class Sprite extends Bebida{
         super();
         super.setSerie("S" + num);
         
-        this.setBounds(0, 0, 20, 40);
+        this.setBounds(0, 0, 30, 60);
         this.setOpaque(false);
     }
     public String beber(){
@@ -40,9 +40,13 @@ class Sprite extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.white);
-        g.fillRect(this.getX(), this.getY(), 20, 40);
+        g.fillRect(this.getX(), this.getY(), 30, 60);
         g.setColor(Color.green);
-        g.fillRect(this.getX(), this.getY()+10, 20, 15);
+        g.fillRect(this.getX(), this.getY()+15, 30, 25);
+        
+        g.setColor(Color.black);
+        g.setFont(new Font("SansSerif.", 1, 8));
+        g.drawString(super.getSerie(), this.getX()+3, this.getY()+this.getHeight()-5);
     }
 }
 
@@ -51,7 +55,7 @@ class CocaCola extends Bebida{
         super();
         super.setSerie("C" + num);
         
-        this.setBounds(0, 0, 20, 40);
+        this.setBounds(0, 0, 30, 60);
         this.setOpaque(false);
     }
     public String beber(){
@@ -65,9 +69,13 @@ class CocaCola extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.black);
-        g.fillRect(this.getX(), this.getY(), 20, 40);
+        g.fillRect(this.getX(), this.getY(), 30, 60);
         g.setColor(Color.red);
-        g.fillRect(this.getX(), this.getY()+10, 20, 15);
+        g.fillRect(this.getX(), this.getY()+15, 30, 15);
+        
+        g.setColor(Color.white);
+        g.setFont(new Font("SansSerif.", 1, 8));
+        g.drawString(super.getSerie(), this.getX()+3, this.getY()+this.getHeight()-5);
     }
 }
 
@@ -76,7 +84,7 @@ class Fanta extends Bebida{
         super();
         super.setSerie("F" + num);
         
-        this.setBounds(0, 0, 20, 40);
+        this.setBounds(0, 0, 30, 60);
         this.setOpaque(false);
     }
     public String beber(){
@@ -90,6 +98,10 @@ class Fanta extends Bebida{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.orange);
-        g.fillRect(this.getX(), this.getY(), 20, 40);
+        g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+        
+        g.setColor(Color.black);
+        g.setFont(new Font("SansSerif.", 1, 8));
+        g.drawString(super.getSerie(), this.getX()+3, this.getY()+this.getHeight()-5);
     }
 }

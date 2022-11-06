@@ -23,12 +23,7 @@ public class DepositoVuelto extends JPanel{
         g.setColor(Color.DARK_GRAY);
         g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
-        g.setColor(Color.white);
-        g.setFont(new Font("TimesRoman", 1, 20));
-        g.drawString("Hola, Pancho!", 100, 100);
-        g.drawString("Esto es una prueba", 100,120);
-        
-         if(!vuelto.isEmpty()){
+        if(!vuelto.isEmpty()){
             Graphics g_aux = g.create();
             
             for(int i=0; i<vuelto.size(); ++i){

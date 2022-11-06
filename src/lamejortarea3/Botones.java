@@ -53,7 +53,7 @@ public class Botones{
             }
         });
         b_depositos.setBounds(pp.getExpendedor().getX()+30, pp.getExpendedor().getY()+20,
-                200, 330);
+                240, 460);
         b_depositos.setOpaque(false);
         b_depositos.setContentAreaFilled(false);
         pp.add(b_depositos);

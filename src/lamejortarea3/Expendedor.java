@@ -25,8 +25,6 @@ public class Expendedor extends JPanel{
         
         this.setBounds(500, 100, 400, 500);
         this.setOpaque(false);
-        //compra.setBounds(this.getX()+250, this.getY()+320, 70, 100);
-        //compra.setOpaque(false);
         
         for(int i=0; i < cantidad; i++){
            Bebida aux_coca = new CocaCola(coca.getContador());
@@ -51,14 +49,14 @@ public class Expendedor extends JPanel{
         
         // Vidrio
         g.setColor(Color.CYAN);
-        g.fillRect(this.getX()+30, this.getY()+20, 200, 330);
+        g.fillRect(this.getX()+30, this.getY()+20, 240, 460);
         
         // Depositos
         g.setColor(Color.BLACK);
-        g.fillRect(this.getX()+30, this.getY()+20, 8, 330);
-        g.fillRect(this.getX()+94, this.getY()+20, 8, 330);
-        g.fillRect(this.getX()+158, this.getY()+20, 8, 330);
-        g.fillRect(this.getX()+222, this.getY()+20, 8, 330);
+        g.fillRect(this.getX()+30, this.getY()+20, 8, 460);
+        g.fillRect(this.getX()+102, this.getY()+20, 8, 460);
+        g.fillRect(this.getX()+182, this.getY()+20, 8, 460);
+        g.fillRect(this.getX()+262, this.getY()+20, 8, 460);
         coca.paintComponent(g, this);
         sprite.paintComponent(g, this);
         fanta.paintComponent(g, this);
