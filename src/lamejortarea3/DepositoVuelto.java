@@ -13,12 +13,16 @@ public class DepositoVuelto extends JPanel{
         vuelto = new ArrayList<Moneda>();
     }
     
-    @Override
-    public void paintComponent(Graphics g){
+    // @Override
+    public void paintComponent(Graphics g, Expendedor exp){
         super.paintComponent(g);
         
+        this.setBounds(exp.getX()+310, exp.getY()+260, 50, 70);
+        this.setOpaque(false);
+        
         g.setColor(Color.DARK_GRAY);
-        g.fillRect(810, 360, 50, 70);
+        g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+        
         g.setColor(Color.white);
         g.setFont(new Font("TimesRoman", 1, 20));
         g.drawString("Hola, Pancho!", 100, 100);

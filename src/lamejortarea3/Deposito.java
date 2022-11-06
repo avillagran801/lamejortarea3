@@ -5,9 +5,11 @@ import javax.swing.*;
 
 public class Deposito extends JPanel{
     private ArrayList<Bebida> d;
+    private int cont;
     
     public Deposito(){
         d = new ArrayList<Bebida>();
+        cont = 0;
     }
     
     public void addBebida(Bebida b){
@@ -21,6 +23,12 @@ public class Deposito extends JPanel{
         else{
             return d.remove(0);
         }
+    }
+    
+    public int getContador(){
+        int cont_aux = cont;
+        cont++;
+        return cont_aux;
     }
     
     public Boolean isEmpty(){

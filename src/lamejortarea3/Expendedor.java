@@ -11,7 +11,6 @@ public class Expendedor extends JPanel{
     private Deposito fanta;
     private DepositoCompra compra;
     private DepositoVuelto vuelto;
-    // private ArrayList<Moneda> vuelto;
     private ArrayList<Moneda> monedas;
     
     public Expendedor(int cant, int precio_aux){
@@ -21,19 +20,18 @@ public class Expendedor extends JPanel{
         fanta = new Deposito();
         compra = new DepositoCompra();
         vuelto = new DepositoVuelto();
-        // vuelto = new ArrayList<Moneda>();
         monedas = new ArrayList<Moneda>();
         cantidad = cant;
         
         this.setBounds(500, 100, 400, 500);
         this.setOpaque(false);
-        compra.setBounds(this.getX()+250, this.getY()+320, 70, 100);
-        compra.setOpaque(false);
+        //compra.setBounds(this.getX()+250, this.getY()+320, 70, 100);
+        //compra.setOpaque(false);
         
         for(int i=0; i < cantidad; i++){
-           Bebida aux_coca = new CocaCola();
-           Bebida aux_sprite = new Sprite();
-           Bebida aux_fanta = new Fanta();
+           Bebida aux_coca = new CocaCola(coca.getContador());
+           Bebida aux_sprite = new Sprite(sprite.getContador());
+           Bebida aux_fanta = new Fanta(fanta.getContador());
 
            coca.addBebida(aux_coca);
            sprite.addBebida(aux_sprite);
@@ -66,10 +64,10 @@ public class Expendedor extends JPanel{
         fanta.paintComponent(g, this);
         
         // Deposito bebida comprada
-        compra.paintComponent(g);
+        compra.paintComponent(g, this);
                 
         // Deposito vuelto
-        vuelto.paintComponent(g);
+        vuelto.paintComponent(g, this);
             
     }
     
@@ -168,23 +166,10 @@ public class Expendedor extends JPanel{
         }
     }
     
-    /*
-    private void crearVuelto(Moneda coin_aux){
-        // Un método privado, ya que solo el Expendedor puede crear vuelto.
-        if (coin_aux.getValor() > precio) {
-            for (int i = 0; i < (coin_aux.getValor()-precio)/100; i++){
-                Moneda100 m100_aux = new Moneda100();
-                vuelto.add(m100_aux);
-            }
-            System.out.println("Hay vuelto disponible.");
-        }
-    }
-    */
-    
     public void rellenarDepositos(){
         if(coca.isEmpty()){
             for (int i = 0; i < cantidad; i++){
-                Bebida aux_coca = new CocaCola();
+                Bebida aux_coca = new CocaCola(coca.getContador());
                 coca.addBebida(aux_coca);
             }
         } else {
@@ -192,7 +177,7 @@ public class Expendedor extends JPanel{
         }
         if(sprite.isEmpty()){
             for (int i = 0; i < cantidad; i++){
-                Bebida aux_sprite = new Sprite();
+                Bebida aux_sprite = new Sprite(sprite.getContador());
                 sprite.addBebida(aux_sprite);
             }
         } else {
@@ -200,7 +185,7 @@ public class Expendedor extends JPanel{
         }
         if(fanta.isEmpty()){
             for (int i = 0; i < cantidad; i++){
-                Bebida aux_fanta = new Fanta();
+                Bebida aux_fanta = new Fanta(fanta.getContador());
                 fanta.addBebida(aux_fanta);
             }
         } else {
@@ -211,19 +196,6 @@ public class Expendedor extends JPanel{
     public Moneda getVuelto(){
         return vuelto.getMoneda();
     }
-    
-    /*
-    public Moneda getVuelto(){
-        if(vuelto.isEmpty()){
-            System.out.println("Ya no queda vuelto que dar.");
-            return null;
-        } else {
-            System.out.println("Quedan " + (vuelto.size() - 1) + 
-                    " monedas en el deposito.");
-            return vuelto.remove(0);
-        }
-    }
-    */
     
     public int getPrecio(){
         return precio;

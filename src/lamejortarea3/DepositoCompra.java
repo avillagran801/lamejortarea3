@@ -7,15 +7,19 @@ import javax.swing.JPanel;
 public class DepositoCompra extends JPanel {
     private Bebida bebida;
         
-    @Override
-    public void paintComponent(Graphics g){
+    // @Override
+    public void paintComponent(Graphics g, Expendedor exp){
         super.paintComponent(g);
+                
+        this.setBounds(exp.getX()+300, exp.getY()+370, 70, 100);
+        this.setOpaque(false);
+        
         
         g.setColor(Color.DARK_GRAY);
-        g.fillRect(800, 470, 70, 100);
+        g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
         if(bebida != null){
-            bebida.setBounds(this.getX()+25, this.getY()+45, 20, 40);
+            bebida.setBounds(this.getX()+25, this.getY()+30, 20, 40);
             bebida.paintComponent(g);
         }
     }
@@ -27,6 +31,7 @@ public class DepositoCompra extends JPanel {
     public Bebida getBebida(){
         Bebida aux_bebida = bebida;
         bebida = null;
+        System.out.println("Número de serie:" + aux_bebida.getSerie());
         return aux_bebida;
     }
     

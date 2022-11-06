@@ -3,6 +3,15 @@ import java.awt.*;
 import javax.swing.*;
 
 abstract class Bebida extends JPanel {
+    private String serie;
+        
+    public void setSerie(String aux){
+        serie = aux;
+    }
+    
+    public String getSerie(){
+        return serie;
+    }
     
     public abstract String beber();
     
@@ -13,8 +22,10 @@ abstract class Bebida extends JPanel {
 }
 
 class Sprite extends Bebida{
-    public Sprite(){
+    public Sprite(int num){
         super();
+        super.setSerie("S" + num);
+        
         this.setBounds(0, 0, 20, 40);
         this.setOpaque(false);
     }
@@ -36,8 +47,10 @@ class Sprite extends Bebida{
 }
 
 class CocaCola extends Bebida{
-    public CocaCola(){
+    public CocaCola(int num){
         super();
+        super.setSerie("C" + num);
+        
         this.setBounds(0, 0, 20, 40);
         this.setOpaque(false);
     }
@@ -59,8 +72,10 @@ class CocaCola extends Bebida{
 }
 
 class Fanta extends Bebida{
-    public Fanta(){
+    public Fanta(int num){
         super();
+        super.setSerie("F" + num);
+        
         this.setBounds(0, 0, 20, 40);
         this.setOpaque(false);
     }

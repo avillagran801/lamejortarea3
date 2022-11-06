@@ -29,14 +29,6 @@ public class Comprador extends JPanel{
     
     public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){        
         expendedor.comprarBebida(idBebida, moneda);
-
-        /*
-        if (moneda != null){
-            System.out.println("Precio bebida: $" + expendedor.getPrecio() + 
-                    "\nMonto abonado: $" + moneda.getValor() + "\nVuelto: $" + 
-                    vuelto);
-        }
-        */
     }
     
     public void retirarVuelto(Expendedor expendedor){
