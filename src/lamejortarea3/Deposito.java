@@ -40,21 +40,21 @@ public class Deposito extends JPanel{
             if(aux.getSabor() == "cocacola"){
                 for (int i = 0; i < d.size() && i < 6; i++){
                     aux= d.get(i);
-                    aux.setBounds(exp.getX()+46, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.setBounds(exp.getX()+56, exp.getY() + 350 - (52*(i+1)), 20, 40);
                     aux.paintComponent(g);
                 }
             }
             if(aux.getSabor() == "sprite"){
                 for (int i = 0; i < d.size() && i < 6; i++){
                     aux= d.get(i);
-                    aux.setBounds(exp.getX()+110, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.setBounds(exp.getX()+120, exp.getY() + 350 - (52*(i+1)), 20, 40);
                     aux.paintComponent(g);
                 }
             }
             if(aux.getSabor() == "fanta"){
                 for (int i = 0; i < d.size() && i < 6; i++){
                     aux= d.get(i);
-                    aux.setBounds(exp.getX()+174, exp.getY() + 350 - (52*(i+1)), 20, 40);
+                    aux.setBounds(exp.getX()+184, exp.getY() + 350 - (52*(i+1)), 20, 40);
                     aux.paintComponent(g);
                 }
             }
