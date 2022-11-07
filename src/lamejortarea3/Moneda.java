@@ -25,13 +25,8 @@ class Moneda1500 extends Moneda {
     public Moneda1500(String aux){
         super();
         super.setSerie(aux);
+        this.setBounds(805,430,20,20);
     }
-    
-    /*
-    public String getSerie(){
-        return "Moneda de 1500.\nNúmero de serie: " + this.toString();
-    }
-    */
     
     public int getValor(){
         return 1500;
@@ -40,7 +35,6 @@ class Moneda1500 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        this.setBounds(805,430,20,20);
         
         g.setColor(Color.red);
         g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -57,13 +51,8 @@ class Moneda1000 extends Moneda {
     public Moneda1000(String aux){
         super();
         super.setSerie(aux);
+        this.setBounds(805,430,20,20);
     }
-    
-    /*
-    public String getSerie(){
-        return "Moneda de 1000.\nNúmero de serie: " + this.toString();
-    }
-    */
     
     public int getValor(){
         return 1000;
@@ -72,7 +61,6 @@ class Moneda1000 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        this.setBounds(805,430,20,20);
         
         g.setColor(Color.green);
         g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -89,13 +77,8 @@ class Moneda500 extends Moneda {
     public Moneda500(String aux){
         super();
         super.setSerie(aux);
+        this.setBounds(805,430,20,20);        
     }
-    
-    /*
-    public String getSerie(){
-        return "Moneda de 500.\nNúmero de serie: " + this.toString();
-    }
-    */
     
     public int getValor(){
         return 500;
@@ -104,7 +87,6 @@ class Moneda500 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        this.setBounds(805,430,20,20);
         
         g.setColor(Color.pink);
         g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -121,14 +103,9 @@ class Moneda100 extends Moneda {
     public Moneda100(String aux){
         super();
         super.setSerie(aux);
+        this.setBounds(805,430,20,20);        
     }
-    
-    /*
-    public String getSerie(){
-        return "Moneda de 100.\nNúmero de serie: " + this.toString();
-    }
-    */
-    
+ 
     public int getValor(){
         return 100;
     }
@@ -136,7 +113,6 @@ class Moneda100 extends Moneda {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        this.setBounds(805,430,20,20);
         
         g.setColor(Color.blue);
         g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());

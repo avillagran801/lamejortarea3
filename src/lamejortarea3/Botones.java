@@ -110,7 +110,7 @@ public class Botones{
             System.out.println("\nNo hay bebida que retirar.");
         } else {
             System.out.println("\nBebida retirada.");
-            pp.getExpendedor().getCompra().getBebida();
+            pp.getComprador().addBebida(pp.getExpendedor().getCompra().getBebida());
             pp.repaint();
         }
     }
