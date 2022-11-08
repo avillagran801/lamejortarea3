@@ -26,21 +26,10 @@ public class DepositoVuelto extends JPanel{
         g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
         if(!vuelto.isEmpty()){
-            Graphics g_aux = g.create();
-            
-            for(int i=0; i<vuelto.size(); ++i){
-
-                if(i == 4 || i == 8){
-                    g_aux.translate(20, 60);
-                    vuelto.get(i).paintComponent(g_aux);
-                }
-                else{
-                    if(i == 12){
-                        break;
-                    }
-                    g_aux.translate(0,-20);
-                    vuelto.get(i).paintComponent(g_aux);
-                }    
+            for(int i=0; i<vuelto.size() && i < 15; i++){
+                vuelto.get(i).setBounds(this.getX()+(20*(i/5)), 
+                        this.getY()+(100*((i/5)+1))-(20*(i+1)), 20, 20);
+                vuelto.get(i).paintComponent(g);
             }
         }
     }
