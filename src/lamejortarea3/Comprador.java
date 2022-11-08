@@ -65,6 +65,10 @@ public class Comprador extends JPanel{
         this.bebidas.add(b);
     }
     
+    public ArrayList<Moneda> getSencillo(){
+        return sencillo;
+    }
+    
     public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){        
         expendedor.comprarBebida(idBebida, moneda);
     }

@@ -15,6 +15,7 @@ public class Botones{
         JButton b_depositos = new JButton();
         JButton b_compra = new JButton();
         JButton b_monedas = new JButton();
+        JButton b_clearSencillo = new JButton();
         
         b_coca.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -79,6 +80,17 @@ public class Botones{
         b_monedas.setOpaque(false);
         b_monedas.setContentAreaFilled(false);
         pp.add(b_monedas);
+        
+        b_clearSencillo.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearCoins(evt);
+            }
+        });
+        b_clearSencillo.setBounds(100, 100, 300, 60);
+        b_clearSencillo.setOpaque(false);
+        b_clearSencillo.setContentAreaFilled(false);
+        pp.add(b_clearSencillo);
     }
         
     private void comprarCoca(java.awt.event.MouseEvent evt){
@@ -117,6 +129,15 @@ public class Botones{
     
     private void getVuelto(java.awt.event.MouseEvent evt){
         pp.getComprador().retirarVuelto(pp.getExpendedor());
+        pp.repaint();
+    }
+    
+    private void clearCoins(java.awt.event.MouseEvent evt){
+        if(pp.getComprador().getSencillo().isEmpty()){
+            return;
+        } else {
+            pp.getComprador().getSencillo().remove(0);
+        }
         pp.repaint();
     }
 }
