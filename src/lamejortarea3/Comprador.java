@@ -63,7 +63,6 @@ public class Comprador extends JPanel{
         if(vuelto_aux != null){
             vuelto = vuelto + vuelto_aux.getValor();
             this.sencillo.add(vuelto_aux);
-            System.out.println(sencillo.get(0).getSerie());
         } else {
             System.out.println("No queda vuelto que retirar.");
         }
