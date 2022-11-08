@@ -16,6 +16,10 @@ public class Botones{
         JButton b_compra = new JButton();
         JButton b_monedas = new JButton();
         JButton b_clearSencillo = new JButton();
+        JButton b_m100 = new JButton();
+        JButton b_m500 = new JButton();
+        JButton b_m1000 = new JButton();
+        JButton b_m1500 = new JButton();
         
         b_coca.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -91,23 +95,63 @@ public class Botones{
         b_clearSencillo.setOpaque(false);
         b_clearSencillo.setContentAreaFilled(false);
         pp.add(b_clearSencillo);
+        
+        b_m100.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectM100(evt);
+            }
+        });
+        b_m100.setBounds(100, 680, 60, 40);
+        b_m100.setBackground(Color.black);
+        pp.add(b_m100);
+        
+        b_m500.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectM500(evt);
+            }
+        });
+        b_m500.setBounds(175, 680, 60, 40);
+        b_m500.setBackground(Color.pink);
+        pp.add(b_m500);
+        
+        b_m1000.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectM1000(evt);
+            }
+        });
+        b_m1000.setBounds(255, 680, 60, 40);
+        b_m1000.setBackground(Color.green);
+        pp.add(b_m1000);
+        
+        b_m1500.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectM1500(evt);
+            }
+        });
+        b_m1500.setBounds(330, 680, 60, 40);
+        b_m1500.setBackground(Color.red);
+        pp.add(b_m1500);
     }
         
     private void comprarCoca(java.awt.event.MouseEvent evt){
         System.out.println("\n*** Comprar Coca ***");
-        pp.getComprador().comprarBebida(0, new Moneda1500("M" + 1), pp.getExpendedor()); // ESTO ES DE PRUEBA
+        pp.getComprador().comprarBebida(0, pp.getExpendedor()); // ESTO ES DE PRUEBA
         pp.repaint();
     }
     
     private void comprarSprite(java.awt.event.MouseEvent evt){
         System.out.println("\n*** Comprar Sprite ***");
-        pp.getComprador().comprarBebida(1, new Moneda1500("M" + 1), pp.getExpendedor());
+        pp.getComprador().comprarBebida(1, pp.getExpendedor());
         pp.repaint();
     }
     
     private void comprarFanta(java.awt.event.MouseEvent evt){
         System.out.println("\n*** Comprar Fanta ***");
-        pp.getComprador().comprarBebida(2, new Moneda1500("M" + 1), pp.getExpendedor());
+        pp.getComprador().comprarBebida(2, pp.getExpendedor());
         pp.repaint();
     }
     
@@ -139,5 +183,25 @@ public class Botones{
             pp.getComprador().getSencillo().remove(0);
         }
         pp.repaint();
+    }
+    
+    private void selectM100(java.awt.event.MouseEvent evt) {
+        System.out.println("MONEDA 100!");
+        pp.getComprador().seleccionarMoneda(0);
+    }
+    
+    private void selectM500(java.awt.event.MouseEvent evt) {
+        System.out.println("MONEDA 500!");
+        pp.getComprador().seleccionarMoneda(1);
+    }
+    
+    private void selectM1000(java.awt.event.MouseEvent evt) {
+        System.out.println("MONEDA 1000!");
+        pp.getComprador().seleccionarMoneda(2);
+    }
+    
+    private void selectM1500(java.awt.event.MouseEvent evt) {
+        System.out.println("MONEDA 1500!");
+        pp.getComprador().seleccionarMoneda(3);
     }
 }

@@ -7,12 +7,15 @@ public class Comprador extends JPanel{
     private ArrayList<Bebida> bebidas;
     private int vuelto;
     private ArrayList<Moneda> sencillo;
+    private Moneda moneda;
+    private int cont_moneda;
     
     public Comprador(){
         sencillo = new ArrayList<Moneda>();
         bebidas = new ArrayList<Bebida>();
         this.setBounds(100, 100, 1000, 1000);
         this.setOpaque(false);
+        cont_moneda = 0;
     }
     
     @Override
@@ -69,7 +72,28 @@ public class Comprador extends JPanel{
         return sencillo;
     }
     
-    public void comprarBebida(int idBebida, Moneda moneda, Expendedor expendedor){        
+    public void seleccionarMoneda(int m){
+        switch(m){
+                case 0:
+                    moneda = new Moneda100("M" + cont_moneda);
+                    cont_moneda++;
+                    break;
+                case 1:
+                    moneda = new Moneda500("M" + cont_moneda);
+                    cont_moneda++;
+                    break;
+                case 2:
+                    moneda = new Moneda1000("M" + cont_moneda);
+                    cont_moneda++;
+                    break;
+                case 3:
+                    moneda = new Moneda1500("M" + cont_moneda);
+                    cont_moneda++;
+                    break;
+        }
+    }
+    
+    public void comprarBebida(int idBebida, Expendedor expendedor){        
         expendedor.comprarBebida(idBebida, moneda);
     }
     

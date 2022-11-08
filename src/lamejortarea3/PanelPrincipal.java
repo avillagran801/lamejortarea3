@@ -12,7 +12,7 @@ public class PanelPrincipal extends JPanel{
         con = new Comprador ();
         
         this.setLayout(null);
-        this.setBackground(Color.blue);
+        this.setBackground(Color.DARK_GRAY);
     }
     
     public Comprador getComprador(){
