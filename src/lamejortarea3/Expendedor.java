@@ -12,6 +12,7 @@ public class Expendedor extends JPanel{
     private DepositoCompra compra;
     private DepositoVuelto vuelto;
     private ArrayList<Moneda> monedas;
+    private JLabel emptyDeposit;
     
     public Expendedor(int cant, int precio_aux){
         precio = precio_aux;
@@ -35,6 +36,10 @@ public class Expendedor extends JPanel{
            sprite.addBebida(aux_sprite);
            fanta.addBebida(aux_fanta);
         }
+    }
+    
+    public Boolean sinBebida(){
+        return coca.isEmpty()||sprite.isEmpty()||fanta.isEmpty();
     }
     
     @Override
@@ -77,9 +82,9 @@ public class Expendedor extends JPanel{
                 throw new PagoIncorrectoException("No se acepta Null como pago.");
             }
             if(m.getValor() >= precio){
+                // 0 siendo coca; 1 siendo sprite; 2 siendo fanta.
                 switch (idBebida){
-                    // 0 siendo coca; 1 siendo sprite; 2 siendo fanta.
-                    case 0:
+                    case 0: {
                         if(coca.isEmpty()){
                             throw new NoHayBebidaException("No queda Coca-cola.");
                         }
@@ -92,11 +97,13 @@ public class Expendedor extends JPanel{
                             vuelto.crearVuelto(m, precio);
                         }
                         else{
-                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                            throw new BebidaSinRetirarException("Ya hay una "
+                                    + "bebida en el depósito");
                         }
                         break;
+                    }
 
-                    case 1:
+                    case 1: {
                         if(sprite.isEmpty()){
                             throw new NoHayBebidaException("No queda Sprite.");
                         }
@@ -108,11 +115,13 @@ public class Expendedor extends JPanel{
                             vuelto.crearVuelto(m, precio);
                         }
                         else{
-                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                            throw new BebidaSinRetirarException("Ya hay una "
+                                    + "bebida en el depósito");
                         }
                         break;
+                    }
 
-                    case 2:
+                    case 2: {
                         if(fanta.isEmpty()){
                             throw new NoHayBebidaException("No queda Fanta.");
                         }
@@ -124,13 +133,11 @@ public class Expendedor extends JPanel{
                             vuelto.crearVuelto(m, precio);
                         }
                         else{
-                            throw new BebidaSinRetirarException("Ya hay una bebida en el depósito");
+                            throw new BebidaSinRetirarException("Ya hay una "
+                                    + "bebida en el depósito");
                         }
                         break;
-                    
-                    default:
-                        throw new NoHayBebidaException("ID equivocado.");
-                    
+                    }
                 }
             } else {
                 throw new PagoInsuficienteException("Dinero insuficiente.");

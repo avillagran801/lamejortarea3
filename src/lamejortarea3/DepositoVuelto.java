@@ -8,37 +8,28 @@ import java.awt.Font;
 
 public class DepositoVuelto extends JPanel{
     private ArrayList<Moneda> vuelto;
+    private int cont;
     
     public DepositoVuelto(){
         vuelto = new ArrayList<Moneda>();
+        cont = 0;
     }
     
     // @Override
     public void paintComponent(Graphics g, Expendedor exp){
         super.paintComponent(g);
         
-        this.setBounds(exp.getX()+310, exp.getY()+260, 50, 70);
+        this.setBounds(exp.getX()+300, exp.getY()+240, 70, 100);
         this.setOpaque(false);
         
         g.setColor(Color.DARK_GRAY);
         g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
         if(!vuelto.isEmpty()){
-            Graphics g_aux = g.create();
-            
-            for(int i=0; i<vuelto.size(); ++i){
-
-                if(i == 4 || i == 8){
-                    g_aux.translate(15, 45);
-                    vuelto.get(i).paintComponent(g_aux);
-                }
-                else{
-                    if(i == 12){
-                        break;
-                    }
-                    g_aux.translate(0,-15);
-                    vuelto.get(i).paintComponent(g_aux);
-                }    
+            for(int i=0; i<vuelto.size() && i < 15; i++){
+                vuelto.get(i).setBounds(this.getX()+(20*(i/5)), 
+                        this.getY()+(100*((i/5)+1))-(20*(i+1)), 20, 20);
+                vuelto.get(i).paintComponent(g);
             }
         }
     }
@@ -46,8 +37,9 @@ public class DepositoVuelto extends JPanel{
     public void crearVuelto(Moneda coin_aux, int precio){
         if (coin_aux.getValor() > precio) {
             for (int i = 0; i < (coin_aux.getValor()-precio)/100; i++){
-                Moneda100 m100_aux = new Moneda100();
+                Moneda100 m100_aux = new Moneda100("V" + cont);
                 vuelto.add(m100_aux);
+                cont++;
             }
             System.out.println("Hay vuelto disponible.");
             totalMonedasDeposito();
