@@ -1,10 +1,15 @@
 package lamejortarea3;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 
 public class Botones{
     private PanelPrincipal pp;
+    private JButton b_m100;
+    private JButton b_m500;
+    private JButton b_m1000;
+    private JButton b_m1500;
      
     public Botones(PanelPrincipal pp_aux){
         pp = pp_aux;
@@ -16,10 +21,17 @@ public class Botones{
         JButton b_compra = new JButton();
         JButton b_monedas = new JButton();
         JButton b_clearSencillo = new JButton();
-        JButton b_m100 = new JButton();
-        JButton b_m500 = new JButton();
-        JButton b_m1000 = new JButton();
-        JButton b_m1500 = new JButton();
+        JButton b_clearBebidas = new JButton();
+        b_m100 = new JButton("$100");
+        b_m100.setFont(new Font("Arial", Font.PLAIN, 10));
+        b_m100.setForeground(Color.WHITE);
+        b_m500 = new JButton("$500");
+        b_m500.setFont(new Font("Arial", Font.PLAIN, 10));
+        b_m1000 = new JButton("$1000");
+        b_m1000.setFont(new Font("Arial", Font.PLAIN, 8));
+        b_m1500 = new JButton("$1500");
+        b_m1500.setFont(new Font("Arial", Font.PLAIN, 8));
+        b_m1500.setForeground(Color.WHITE);
         
         b_coca.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -96,6 +108,17 @@ public class Botones{
         b_clearSencillo.setContentAreaFilled(false);
         pp.add(b_clearSencillo);
         
+        b_clearBebidas.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearBebidas(evt);
+            }
+        });
+        b_clearBebidas.setBounds(100, 165, 300, 60);
+        b_clearBebidas.setOpaque(false);
+        b_clearBebidas.setContentAreaFilled(false);
+        pp.add(b_clearBebidas);
+        
         b_m100.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +126,7 @@ public class Botones{
             }
         });
         b_m100.setBounds(100, 680, 60, 40);
-        b_m100.setBackground(Color.black);
+        b_m100.setBackground(Color.blue);
         pp.add(b_m100);
         
         b_m500.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,23 +208,52 @@ public class Botones{
         pp.repaint();
     }
     
+    private void clearBebidas(java.awt.event.MouseEvent evt){
+        if(pp.getComprador().getBebidas().isEmpty()){
+            return;
+        } else {
+            pp.getComprador().getBebidas().remove(0);
+        }
+        pp.repaint();
+    }
+    
     private void selectM100(java.awt.event.MouseEvent evt) {
         System.out.println("MONEDA 100!");
-        pp.getComprador().seleccionarMoneda(0);
+        pp.getComprador().seleccionarMoneda(1);
+        this.b_m100.setEnabled(false);
+        this.b_m500.setEnabled(true);
+        this.b_m1000.setEnabled(true);
+        this.b_m1500.setEnabled(true);
+        pp.repaint();
     }
     
     private void selectM500(java.awt.event.MouseEvent evt) {
         System.out.println("MONEDA 500!");
-        pp.getComprador().seleccionarMoneda(1);
+        pp.getComprador().seleccionarMoneda(2);
+        this.b_m100.setEnabled(true);
+        this.b_m500.setEnabled(false);
+        this.b_m1000.setEnabled(true);
+        this.b_m1500.setEnabled(true);
+        pp.repaint();
     }
     
     private void selectM1000(java.awt.event.MouseEvent evt) {
         System.out.println("MONEDA 1000!");
-        pp.getComprador().seleccionarMoneda(2);
+        pp.getComprador().seleccionarMoneda(3);
+        this.b_m100.setEnabled(true);
+        this.b_m500.setEnabled(true);
+        this.b_m1000.setEnabled(false);
+        this.b_m1500.setEnabled(true);
+        pp.repaint();
     }
     
     private void selectM1500(java.awt.event.MouseEvent evt) {
         System.out.println("MONEDA 1500!");
-        pp.getComprador().seleccionarMoneda(3);
+        pp.getComprador().seleccionarMoneda(4);
+        this.b_m100.setEnabled(true);
+        this.b_m500.setEnabled(true);
+        this.b_m1000.setEnabled(true);
+        this.b_m1500.setEnabled(false);
+        pp.repaint();
     }
 }

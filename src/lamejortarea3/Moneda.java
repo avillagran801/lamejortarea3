@@ -67,7 +67,7 @@ class Moneda1000 extends Moneda {
         g.setColor(Color.black);
         g.drawOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
-        g.setColor(Color.white);
+        g.setColor(Color.black);
         g.setFont(new Font("SansSerif.", 1, 8));
         g.drawString(super.getSerie(), this.getX() + 3, this.getY() + this.getHeight() - 5);
     }
@@ -93,7 +93,7 @@ class Moneda500 extends Moneda {
         g.setColor(Color.black);
         g.drawOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
         
-        g.setColor(Color.white);
+        g.setColor(Color.black);
         g.setFont(new Font("SansSerif.", 1, 8));
         g.drawString(super.getSerie(), this.getX() + 3, this.getY() + this.getHeight() - 5);
     }

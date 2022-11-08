@@ -8,6 +8,7 @@ public class Comprador extends JPanel{
     private int vuelto;
     private ArrayList<Moneda> sencillo;
     private Moneda moneda;
+    private int current_coin;
     private int cont_moneda;
     
     public Comprador(){
@@ -35,6 +36,12 @@ public class Comprador extends JPanel{
         int[] j_aux = {600, 600, 500, 500};
         g.fillPolygon(k_aux, j_aux, 4);
         
+        // Moneda
+        if(moneda != null){
+            this.moneda.setBounds(167, 377, 25, 25);
+            this.moneda.paintComponent(g);
+        }
+        
         // Sencillo
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(this.getX(), this.getY(), 300, 60);
@@ -52,7 +59,7 @@ public class Comprador extends JPanel{
         g.fillRect(this.getX(), this.getY()+65, 300, 60);
         
         if(!bebidas.isEmpty()){
-            for(int i=0; i<bebidas.size() && i < 10; i++){
+            for(int i=0; i<bebidas.size() && i < 8; i++){
                 bebidas.get(i).setBounds(this.getX()+(35*i), 
                         this.getY()+65, 30, 60);
                 bebidas.get(i).paintComponent(g);
@@ -72,29 +79,35 @@ public class Comprador extends JPanel{
         return sencillo;
     }
     
+    public int getContMoneda(){
+        return cont_moneda;
+    }
+    
     public void seleccionarMoneda(int m){
-        switch(m){
-                case 0:
-                    moneda = new Moneda100("M" + cont_moneda);
-                    cont_moneda++;
-                    break;
+        current_coin = m;
+        switch(current_coin){
                 case 1:
-                    moneda = new Moneda500("M" + cont_moneda);
-                    cont_moneda++;
+                    moneda = new Moneda100("M" + cont_moneda);
                     break;
                 case 2:
-                    moneda = new Moneda1000("M" + cont_moneda);
-                    cont_moneda++;
+                    moneda = new Moneda500("M" + cont_moneda);
                     break;
                 case 3:
+                    moneda = new Moneda1000("M" + cont_moneda);
+                    break;
+                case 4:
                     moneda = new Moneda1500("M" + cont_moneda);
-                    cont_moneda++;
                     break;
         }
     }
     
-    public void comprarBebida(int idBebida, Expendedor expendedor){        
+    public void comprarBebida(int idBebida, Expendedor expendedor){   
         expendedor.comprarBebida(idBebida, moneda);
+        if(current_coin == 1 ||current_coin == 2 ||current_coin == 3 ||
+                current_coin == 4){
+            cont_moneda++;
+            seleccionarMoneda(current_coin);
+        }
     }
     
     public void retirarVuelto(Expendedor expendedor){
