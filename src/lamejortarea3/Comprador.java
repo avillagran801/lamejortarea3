@@ -20,11 +20,11 @@ public class Comprador extends JPanel{
         super.paintComponent(g);
         // Cabeza
         g.setColor(Color.green);
-        g.fillOval(200, 200, 100, 100);
+        g.fillOval(200, 250, 100, 100);
         
         // Cuerpo
-        g.fillRect(240, 290, 20, 210);
-        g.fillRect(180, 350, 140, 20);
+        g.fillRect(240, 340, 20, 160);
+        g.fillRect(180, 400, 140, 20);
         int[] x_aux = {180, 200, 260, 240};
         int[] y_aux = {600, 600, 500, 500};
         g.fillPolygon(x_aux, y_aux, 4);
@@ -41,6 +41,18 @@ public class Comprador extends JPanel{
                 sencillo.get(i).setBounds(this.getX()+(20*(i/3)), 
                         this.getY()+(60*((i/3)+1))-(20*(i+1)), 20, 20);
                 sencillo.get(i).paintComponent(g);
+            }
+        }
+        
+        // Bebidas
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(this.getX(), this.getY()+65, 300, 60);
+        
+        if(!bebidas.isEmpty()){
+            for(int i=0; i<bebidas.size() && i < 10; i++){
+                bebidas.get(i).setBounds(this.getX()+(35*i), 
+                        this.getY()+65, 30, 60);
+                bebidas.get(i).paintComponent(g);
             }
         }
     }
