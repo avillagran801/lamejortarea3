@@ -11,7 +11,7 @@
       </Constructors>
       <Methods/>
     </Class>
-    <Class name="Botones" package="lamejortarea3" visibility="public" xPosition="2074.0" yPosition="773.0">
+    <Class name="Botones" package="lamejortarea3" visibility="public" xPosition="1807.0" yPosition="744.0">
       <Fields>
         <Field name="pp" type="PanelPrincipal" visibility="private"/>
         <Field name="b_m100" type="JButton" visibility="private"/>
@@ -106,7 +106,7 @@
       </Constructors>
       <Methods/>
     </Class>
-    <Class name="Comprador" package="lamejortarea3" visibility="public" xPosition="1654.0" yPosition="268.0">
+    <Class name="Comprador" package="lamejortarea3" visibility="public" xPosition="1333.0" yPosition="108.0">
       <Fields>
         <Field name="bebidas" type="ArrayList&lt;Bebida&gt;" visibility="private"/>
         <Field name="vuelto" type="int" visibility="private"/>
@@ -149,7 +149,7 @@
       </Constructors>
       <Methods/>
     </Class>
-    <Class name="LaMejorTarea3" package="lamejortarea3" visibility="public" xPosition="1486.0" yPosition="40.0">
+    <Class name="LaMejorTarea3" package="lamejortarea3" visibility="public" xPosition="2145.0" yPosition="34.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -158,7 +158,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Etiquetas" package="lamejortarea3" visibility="public" xPosition="2120.0" yPosition="71.0">
+    <Class name="Etiquetas" package="lamejortarea3" visibility="public" xPosition="1833.0" yPosition="136.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public">
@@ -184,7 +184,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Sprite" package="lamejortarea3" visibility="public" xPosition="286.0" yPosition="207.0">
+    <Class name="Sprite" package="lamejortarea3" visibility="public" xPosition="323.0" yPosition="173.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public">
@@ -229,7 +229,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Ventana" package="lamejortarea3" visibility="public" xPosition="2162.0" yPosition="413.0">
+    <Class name="Ventana" package="lamejortarea3" visibility="public" xPosition="2159.0" yPosition="324.0">
       <Fields>
         <Field name="pp" type="PanelPrincipal" visibility="package"/>
         <Field name="b" type="Botones" visibility="package"/>
@@ -384,7 +384,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="PanelPrincipal" package="lamejortarea3" visibility="public" xPosition="1704.0" yPosition="983.0">
+    <Class name="PanelPrincipal" package="lamejortarea3" visibility="public" xPosition="1819.0" yPosition="318.0">
       <Fields>
         <Field name="con" type="Comprador" visibility="private"/>
         <Field name="exp" type="Expendedor" visibility="private"/>
@@ -403,44 +403,44 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Deposito" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Comprador" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="sprite" source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="lamejortarea3.Moneda100" target="lamejortarea3.Moneda"/>
-    <HasRelation name="coca" source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="compra" source="lamejortarea3.Expendedor" target="lamejortarea3.DepositoCompra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="moneda" source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="e" source="lamejortarea3.Ventana" target="lamejortarea3.Etiquetas" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bebidas" source="lamejortarea3.Comprador" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bebida&gt;"/>
-    <UseRelation source="lamejortarea3.DepositoCompra" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="monedas" source="lamejortarea3.Expendedor" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Moneda&gt;"/>
-    <IsRelation name="is" source="lamejortarea3.Moneda1500" target="lamejortarea3.Moneda"/>
-    <UseRelation source="lamejortarea3.DepositoVuelto" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Expendedor" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="sencillo" source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Moneda&gt;"/>
-    <UseRelation source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Deposito" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="lamejortarea3.Fanta" target="lamejortarea3.Bebida"/>
-    <HasRelation name="exp" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Expendedor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.DepositoVuelto" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="lamejortarea3.Sprite" target="lamejortarea3.Bebida"/>
-    <HasRelation name="b" source="lamejortarea3.Ventana" target="lamejortarea3.Botones" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vuelto" source="lamejortarea3.Expendedor" target="lamejortarea3.DepositoVuelto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="vuelto" source="lamejortarea3.DepositoVuelto" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Moneda&gt;"/>
-    <HasRelation name="con" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Comprador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="lamejortarea3.Moneda500" target="lamejortarea3.Moneda"/>
-    <HasRelation name="d" source="lamejortarea3.Deposito" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bebida&gt;"/>
-    <IsRelation name="is" source="lamejortarea3.Moneda1000" target="lamejortarea3.Moneda"/>
-    <UseRelation source="lamejortarea3.DepositoCompra" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bebida" source="lamejortarea3.DepositoCompra" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="pp" source="lamejortarea3.Ventana" target="lamejortarea3.PanelPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="pp" source="lamejortarea3.Botones" target="lamejortarea3.PanelPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="m1000" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Moneda1000" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Botones" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Botones" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="lamejortarea3.CocaCola" target="lamejortarea3.Bebida"/>
+    <UseRelation source="lamejortarea3.DepositoCompra" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Main" source="lamejortarea3.LaMejorTarea3" target="lamejortarea3.Ventana" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.Deposito" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="coca" source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="b" source="lamejortarea3.Ventana" target="lamejortarea3.Botones" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bebida" source="lamejortarea3.DepositoCompra" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="exp" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Expendedor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Comprador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vuelto" source="lamejortarea3.Expendedor" target="lamejortarea3.DepositoVuelto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lamejortarea3.Moneda1000" target="lamejortarea3.Moneda"/>
+    <IsRelation name="is" source="lamejortarea3.Moneda1500" target="lamejortarea3.Moneda"/>
+    <HasRelation name="m1000" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Moneda1000" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="monedas" source="lamejortarea3.Expendedor" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Moneda&gt;"/>
+    <HasRelation name="sprite" source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.DepositoVuelto" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.DepositoCompra" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lamejortarea3.Sprite" target="lamejortarea3.Bebida"/>
+    <UseRelation source="lamejortarea3.Deposito" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sencillo" source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Moneda&gt;"/>
+    <UseRelation source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lamejortarea3.Moneda500" target="lamejortarea3.Moneda"/>
+    <IsRelation name="is" source="lamejortarea3.Moneda100" target="lamejortarea3.Moneda"/>
     <HasRelation name="fanta" source="lamejortarea3.Expendedor" target="lamejortarea3.Deposito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.Expendedor" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="d" source="lamejortarea3.Deposito" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bebida&gt;"/>
+    <HasRelation name="bebidas" source="lamejortarea3.Comprador" target="lamejortarea3.Bebida" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Bebida&gt;"/>
+    <UseRelation source="lamejortarea3.DepositoVuelto" target="lamejortarea3.Moneda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="con" source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Comprador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Panel Principal" source="lamejortarea3.Ventana" target="lamejortarea3.PanelPrincipal" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="moneda" source="lamejortarea3.Comprador" target="lamejortarea3.Moneda" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.PanelPrincipal" target="lamejortarea3.Expendedor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lamejortarea3.Comprador" target="lamejortarea3.Bebida" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="compra" source="lamejortarea3.Expendedor" target="lamejortarea3.DepositoCompra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

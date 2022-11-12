@@ -12,7 +12,6 @@ public class Expendedor extends JPanel{
     private DepositoCompra compra;
     private DepositoVuelto vuelto;
     private ArrayList<Moneda> monedas;
-    private JLabel emptyDeposit;
     
     public Expendedor(int cant, int precio_aux){
         precio = precio_aux;
@@ -36,10 +35,6 @@ public class Expendedor extends JPanel{
            sprite.addBebida(aux_sprite);
            fanta.addBebida(aux_fanta);
         }
-    }
-    
-    public Boolean sinBebida(){
-        return coca.isEmpty()||sprite.isEmpty()||fanta.isEmpty();
     }
     
     @Override
